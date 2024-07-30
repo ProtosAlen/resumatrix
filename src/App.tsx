@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 
-import IndexPage from "@/pages/index";
+import IndexPage from "./pages/index";
 
-import PricingPage from "@/pages/pricing";
-import AboutPage from "@/pages/about";
+import PricingPage from "./pages/pricing";
+import AboutPage from "./pages/about";
 import ResumeBuilderPage from "./pages/resume";
 
 function App() {

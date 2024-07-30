@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import { Provider } from "./provider.tsx";
 import { Provider as ReduxProvider } from "react-redux";
-import "@/styles/globals.css";
 
 import store from './store/store.ts'; // Import your store
 
