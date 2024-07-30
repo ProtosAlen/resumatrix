@@ -6,6 +6,7 @@ import PricingPage from "./pages/pricing";
 import AboutPage from "./pages/about";
 import ResumeBuilderPage from "./pages/resume";
 
+
 function App() {
   return (
     <Routes>

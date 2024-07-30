@@ -1,4 +1,5 @@
-import {nextui} from '@nextui-org/theme'
+// tailwind.config.js
+const {nextui} = require("@nextui-org/theme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
     './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/components/(button|code|input|kbd|link|navbar|snippet|toggle|ripple|spinner|popover).js',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {},

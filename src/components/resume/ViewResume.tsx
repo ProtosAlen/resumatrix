@@ -2,12 +2,15 @@ import { RootState } from '@/store/store';
 import { Card, Button, Divider } from '@nextui-org/react';
 import { useSelector } from 'react-redux';
 
+import { CiMail, CiPhone, CiLinkedin } from "react-icons/ci";
+
+
 export default function ViewResume() {
   const resumeData = useSelector((state: RootState) => state.resumeData);
 
-    // Static booleans to control section visibility
-    const showCertifications = false;
-    const showAwards = false;
+  // Static booleans to control section visibility
+  const showCertifications = false;
+  const showAwards = false;
 
   return (
     <section>
@@ -16,58 +19,19 @@ export default function ViewResume() {
       </div>
 
       <div className="resume-container grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="resume-left p-4 bg-gray-200 shadow-md rounded-lg">
+        <div className="resume-left p-4 bg-gray-200 shadow-md rounded-lg mb-4">
           <h1 className="text-3xl font-bold">{resumeData.contact.name}</h1>
           <ul className="contact-info space-y-2">
             <li>
-              <svg
-                className="w-5 h-5 inline-block mr-2 text-gray-500"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 8l9-4 9 4-9 6v10l-9-6zM8 16v5h9v-5z"
-                />
-              </svg>
+              <CiMail className="w-5 h-5 inline-block mr-2 text-gray-500" />
               {resumeData.contact.email}
             </li>
             <li>
-              <svg
-                className="w-5 h-5 inline-block mr-2 text-gray-500"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M16 8l2-2v4l2-2m0 0l2-2v4l2-2m-2 4l-2 2v-4l-2 2m0 0L8 12v8l8-4z"
-                />
-              </svg>
+              <CiPhone className="w-5 h-5 inline-block mr-2 text-gray-500" />
               {resumeData.contact.phone}
             </li>
             <li>
-              <svg
-                className="w-5 h-5 inline-block mr-2 text-gray-500"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8 18 at 3 3 a 3 3 0 1 1 4-4.83v-.75a1.5 1.5 0 0 1 1.5 1.5v.75a3 3 0 0 1 4 4.83M7 4v14L11 14H14v-1H7z"
-                />
-              </svg>
+              <CiLinkedin className="w-5 h-5 inline-block mr-2 text-gray-500" />
               <a href={resumeData.contact.linkedin} target="_blank" rel="noreferrer">
                 {resumeData.contact.linkedin}
               </a>
@@ -77,7 +41,7 @@ export default function ViewResume() {
 
           <h2 className="text-2xl font-medium">Summary</h2>
           <p>{resumeData.summary}</p>
-          <Divider />
+          <Divider className='wspace' />
 
           <h2 className="text-2xl font-medium">Skills</h2>
           <div className="skills-container flex flex-wrap gap-2">
@@ -87,7 +51,6 @@ export default function ViewResume() {
               </Button>
             ))}
           </div>
-          <Divider />
 
           <h2 className="text-2xl font-medium">Education</h2>
           {resumeData.education.map((edu) => (
@@ -98,7 +61,7 @@ export default function ViewResume() {
             </Card>
           ))}
 
-<Divider />
+          <Divider />
           <h2 className="text-2xl font-medium">Additional</h2>
           {resumeData.additional.map((additional) => (
             <Card key={additional.category} className="bg-white shadow-sm rounded-lg p-3 mb-2">
@@ -106,14 +69,10 @@ export default function ViewResume() {
               <p className="text-sm text-gray-600">{additional.details}</p>
             </Card>
           ))}
+          <Divider />
         </div>
 
-
-
-
-
-
-        <div className="resume-right p-4 bg-gray-200 shadow-md rounded-lg">
+        <div className="resume-right p-4 bg-gray-200 shadow-md rounded-lg mb-4">
           <h2 className="text-2xl font-medium">Work Experience</h2>
           {resumeData.workExperience.map((exp) => (
             <Card key={exp.company} className="bg-white shadow-sm rounded-lg p-3 mb-2">
@@ -136,19 +95,22 @@ export default function ViewResume() {
             <Card key={project.title} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <h3 className="text-lg font-medium">{project.title}</h3>
               <p className="text-sm text-gray-600">{project.description}</p>
+              <h4 className="text-sm font-semibold text-gray-500">Technologies</h4>
               <p className="text-sm text-gray-600">{project.technologies.join(', ')}</p>
             </Card>
           ))}
 
-          {showCertifications && (<>
-            <Divider />
-            <h2 className="text-2xl font-medium">Certifications</h2>
-            <ul className="list-disc pl-4 text-sm">
-              {resumeData.certifications.map((cert) => (
-                <li key={cert}>{cert}</li>
-              ))}
-            </ul>
-          </>)}
+          {showCertifications && (
+            <>
+              <Divider />
+              <h2 className="text-2xl font-medium">Certifications</h2>
+              <ul className="list-disc pl-4 text-sm">
+                {resumeData.certifications.map((cert) => (
+                  <li key={cert}>{cert}</li>
+                ))}
+              </ul>
+            </>
+          )}
 
           {showAwards && (
             <>
@@ -174,9 +136,7 @@ export default function ViewResume() {
               </div>
             </Card>
           ))}
-
-
-
+          <Divider />
         </div>
       </div>
     </section>

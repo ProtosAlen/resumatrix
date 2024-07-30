@@ -43,7 +43,7 @@ h4 {
     line-height: 1.3;
 
     margin: 0.2rem 0;
-   
+
 }
 
 h5 {
@@ -76,4 +76,16 @@ ul {
     margin: 0.3rem;
 
     float: right;
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.skills-container {
+    margin-bottom: 1.5rem;
+}
+
+.wspace {
+    margin-top: 1rem;
 }
