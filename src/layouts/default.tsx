@@ -1,5 +1,3 @@
-import { Link } from "@nextui-org/link";
-
 import { Navbar } from "@/components/navbar";
 
 export default function DefaultLayout({
@@ -14,7 +12,7 @@ export default function DefaultLayout({
         {children}
       </main>
       <footer className="w-full flex items-center justify-center py-3">
-      
+
       </footer>
     </div>
   );
