@@ -1,26 +1,10 @@
 import { title } from '@/components/primitives';
 import DefaultLayout from '@/layouts/default';
-import { useContext } from 'react';
 
-import TestResume from '@/components/resume/ViewResume'; // Assuming TestResume uses ResumeData
-import ResumeContext from '@/context/ResumeContext';
-import { ResumeData } from '@/interface/ResumeData';
+import ViewResume from '@/components/resume/ViewResume'; 
+import EditResume from '@/components/resume/EditResume';
 
 export default function ResumeBuilderPage() {
-  const { resumeData, setResumeData } = useContext(ResumeContext);
-
-const handleContactNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  setResumeData({
-    ...resumeData,
-    contact: {
-      name: e.target.value,
-      email: '',
-      phone: '',
-      linkedin: ''
-    },
-  });
-  console.log('Updated resumeData:', resumeData);
-};
 
   return (
     <DefaultLayout>
@@ -29,8 +13,26 @@ const handleContactNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
           <h1 className={title()}>Resume Builder</h1>
         </div>
 
-        <div className="w-full max-w-3xl">
-          {/* Personal information section */}
+        {/* Resume preview component */}
+        <div className="w-full max-w-4xl">
+          <EditResume />
+        </div>
+
+        {/* Resume preview component */}
+        <div className="w-full max-w-4xl">
+          <ViewResume />
+        </div>
+
+      </section>
+    </DefaultLayout>
+  );
+}
+
+
+
+
+{/* <div className="w-full max-w-3xl">
+           Personal information section 
           <div className="mb-8">
             <h2 className="text-xl font-bold mb-4">Personal Information</h2>
             <input
@@ -40,23 +42,11 @@ const handleContactNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               onChange={handleContactNameChange}
               className="border border-gray-300 p-2 rounded"
             />
-            {/* ... other input fields */}
+        
           </div>
 
-          {/* Education section */}
           <div className="mb-8">
             <h2 className="text-xl font-bold mb-4">Education</h2>
-            {/* ... education section logic */}
+      
           </div>
-
-          {/* ... other sections */}
-        </div>
-
-        {/* Resume preview component */}
-        <div className="w-full max-w-4xl">
-          <TestResume />
-        </div>
-      </section>
-    </DefaultLayout>
-  );
-}
+        </div> */}
