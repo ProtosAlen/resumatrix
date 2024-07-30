@@ -6,6 +6,13 @@ export default function ViewResume() {
   const resumeData = useSelector((state: RootState) => state.resumeData);
 
   return (
+    <section>
+      <div className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <h3>View</h3>
+        
+      </div>
+    
+    
     <div className="resume-container grid grid-cols-1 md:grid-cols-2 gap-8">
       <div className="resume-left p-4 bg-gray-200 shadow-md rounded-lg">
         <h1 className="text-3xl font-bold mb-4">{resumeData.contact.name}</h1>
@@ -138,5 +145,6 @@ export default function ViewResume() {
         ))}
       </div>
     </div>
+    </section>
   );
 }
