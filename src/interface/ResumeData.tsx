@@ -33,4 +33,8 @@ export interface ResumeData {
       endDate: string;
       description: string;
     }[];
+    additional: {
+        category: string;
+        details: string;
+    }[];
   }

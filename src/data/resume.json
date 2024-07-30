@@ -1,6 +1,7 @@
 {
   "contact": {
     "name": "Alen Naumoski",
+    "location": "Hibridno, Slovenska Bistrica, Maribor, Slovenija",
     "email": "alenn@infofix.eu",
     "phone": "+386 00 000 000",
     "linkedin": "linkedin.com/in/alen-naumoski"
@@ -22,7 +23,7 @@
   ],
   "education": [
     {
-      "degree": "Univerzitetni diplomirani inženir računalništva in informatike",
+      "degree": "Razvoj projekta InfoFix",
       "institution": "Prizma: IN-SITU",
       "year": "2021"
     },
@@ -33,12 +34,22 @@
     },
     {
       "degree": "Mladinski inkubator",
-      "institution": "",
+      "institution": "MKC Maribor",
       "year": "2020"
     },
     {
       "degree": "Grow Slovenia with Google",
-      "institution": "",
+      "institution": "Center poslovne odličnosti Ekonomske fakultete",
+      "year": "2021"
+    },
+    {
+      "degree": "Unite locally to reconnect after Covid",
+      "institution": "Mladinski svet Slovenije",
+      "year": "2021"
+    },
+    {
+      "degree": "Adria RawMaterials Incubator",
+      "institution": "Univerza v Zagrebu, Fakulteta za rudarstvo, geologijo in nafto (UNIZG-RGNF)",
       "year": "2021"
     }
   ],
@@ -46,8 +57,8 @@
     {
       "company": "SIING",
       "title": "Scrum Master, UX/UI oblikovalec, Angular razvijalec, Varnostni strokovnjak",
-      "startDate": "Februar 2022",
-      "endDate": "September 2022",
+      "startDate": "02.2022",
+      "endDate": "09.2022",
       "responsibilities": [
         "Vodenje agilnih razvojnih procesov",
         "Oblikovanje uporabniških vmesnikov in izkušenj",
@@ -58,8 +69,8 @@
     {
       "company": "ANAplus",
       "title": "Vodja razvoja in oblikovanja Angular aplikacij",
-      "startDate": "December 2022",
-      "endDate": "Februar 2023",
+      "startDate": "12/2022",
+      "endDate": "2/2023",
       "responsibilities": [
         "Vodenje razvoja Angular aplikacij",
         "Oblikovanje vizualnih elementov in uporabniških vmesnikov",
@@ -69,8 +80,8 @@
     {
       "company": "ANAplus",
       "title": "Vodja razvoja in oblikovanja Angular aplikacij",
-      "startDate": "Januar 2021",
-      "endDate": "September 2022",
+      "startDate": "Jan. 2021",
+      "endDate": "Sept. 2022",
       "responsibilities": [
         "Sodelovanje pri oblikovanju",
         "Implementacija programskih funkcionalnosti"
@@ -86,16 +97,6 @@
     {
       "title": "Popravimo Maribor: E-klopca",
       "description": "Skupnostna iniciativa za izboljšanje Maribora",
-      "technologies": []
-    },
-    {
-      "title": "Unite locally to reconnect after Covid",
-      "description": "Izobraževanje organizatorjev in vodstvenih delavcev",
-      "technologies": []
-    },
-    {
-      "title": "Adria RawMaterials Incubator Lectures & Hackathon",
-      "description": "Razvoj inovativnih rešitev za trg izmenjave odpadkov",
       "technologies": []
     },
     {
@@ -130,9 +131,47 @@
     {
       "organization": "Banka idej @ MKC Maribor",
       "role": "Prostovoljec za ocenjevanje projektov",
-      "startDate": "2021",
-      "endDate": "",
+      "startDate": "1.2021",
+      "endDate": "12.2021",
       "description": "Ocenjevanje projektov, svetovanje in podpora pri razvoju."
+    }
+  ],
+  "additional": [
+    {
+      "category": "Programiranje",
+      "details": "Odlično znanje razvoja namiznih in mobilnih aplikacij s C#, JavaScript, HTML5, SCSS, PHP, SQL, Dart, TypeScript, Node.js, .NET in Kotlin."
+    },
+    {
+      "category": "DevOps",
+      "details": "Upravljanje kode, nadzor različic, avtomatizacija, proizvodni pipeline-i. (Jenkins, Git, Sourcetree, GitLab, Bitbucket, Jira)"
+    },
+    {
+      "category": "Baze podatkov",
+      "details": "Izkušnje s produkcijskimi MySQL, MariaDB in PostgreSQL bazami."
+    },
+    {
+      "category": "Razvoj aplikacij in video iger",
+      "details": "Proizvedel 2 večji video igri in 50+ manjših aplikacij/iger. (Unity, Android Studio, WPF)"
+    },
+    {
+      "category": "Promocija",
+      "details": "Zgradil socialna omrežja, ustvaril oglaševalske kampanje. (Instagram, Facebook, AdWords, GAnalytics)"
+    },
+    {
+      "category": "Grafično oblikovanje in 3D modeliranje",
+      "details": "Oblikoval logotipe, teksture za video igre, majice, 3D objekte in animacije. (Illustrator, Blender)"
+    },
+    {
+      "category": "Urejanje videov in fotografij",
+      "details": "Urejal promocijske videe, male filme, YouTube videe. (Photoshop, Premiere, After Effects)"
+    },
+    {
+      "category": "Oblikovanje in razvoj spletnih strani",
+      "details": "Oblikoval 20+ spletnih strani z kodo in različnimi orodji. (Weebly, Wix, Wordpress, Angular)"
+    },
+    {
+      "category": "Upravljanje strežnikov",
+      "details": "Upravljanje strežnikov za video igre, progresivne spletne aplikacije in baze podatkov."
     }
   ]
 }

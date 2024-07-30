@@ -5,6 +5,10 @@ import { useSelector } from 'react-redux';
 export default function ViewResume() {
   const resumeData = useSelector((state: RootState) => state.resumeData);
 
+    // Static booleans to control section visibility
+    const showCertifications = false;
+    const showAwards = false;
+
   return (
     <section>
       <div className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -93,21 +97,37 @@ export default function ViewResume() {
               <p className="text-sm text-gray-600">{edu.year}</p>
             </Card>
           ))}
+
+<Divider />
+          <h2 className="text-2xl font-medium">Additional</h2>
+          {resumeData.additional.map((additional) => (
+            <Card key={additional.category} className="bg-white shadow-sm rounded-lg p-3 mb-2">
+              <h3 className="text-lg font-medium">{additional.category}</h3>
+              <p className="text-sm text-gray-600">{additional.details}</p>
+            </Card>
+          ))}
         </div>
+
+
+
+
+
 
         <div className="resume-right p-4 bg-gray-200 shadow-md rounded-lg">
           <h2 className="text-2xl font-medium">Work Experience</h2>
           {resumeData.workExperience.map((exp) => (
             <Card key={exp.company} className="bg-white shadow-sm rounded-lg p-3 mb-2">
-              <h3 className="text-lg font-medium">{exp.company}</h3>
+
+              <h3 className="text-lg font-medium">{exp.company}<span className="text-sm text-gray-600 dates"> {exp.startDate} - {exp.endDate}</span></h3>
+
               <h4 className="text-sm font-semibold text-gray-500">{exp.title}</h4>
-              
+
               <ul className="list-disc pl-4 text-sm">
                 {exp.responsibilities.map((resp) => (
                   <li key={resp}>{resp}</li>
                 ))}
               </ul>
-              <p className="text-sm text-gray-600">{exp.startDate} - {exp.endDate}</p>
+
             </Card>
           ))}
           <Divider />
@@ -119,32 +139,44 @@ export default function ViewResume() {
               <p className="text-sm text-gray-600">{project.technologies.join(', ')}</p>
             </Card>
           ))}
-          <Divider />
-          <h2 className="text-2xl font-medium">Certifications</h2>
-          <ul className="list-disc pl-4 text-sm">
-            {resumeData.certifications.map((cert) => (
-              <li key={cert}>{cert}</li>
-            ))}
-          </ul>
-          <Divider />
-          <h2 className="text-2xl font-medium">Awards</h2>
-          <ul className="list-disc pl-4 text-sm">
-            {resumeData.awards.map((award) => (
-              <li key={award}>{award}</li>
-            ))}
-          </ul>
+
+          {showCertifications && (<>
+            <Divider />
+            <h2 className="text-2xl font-medium">Certifications</h2>
+            <ul className="list-disc pl-4 text-sm">
+              {resumeData.certifications.map((cert) => (
+                <li key={cert}>{cert}</li>
+              ))}
+            </ul>
+          </>)}
+
+          {showAwards && (
+            <>
+              <Divider />
+              <h2 className="text-2xl font-medium">Awards</h2>
+              <ul className="list-disc pl-4 text-sm">
+                {resumeData.awards.map((award) => (
+                  <li key={award}>{award}</li>
+                ))}
+              </ul>
+            </>
+          )}
+
           <Divider />
           <h2 className="text-2xl font-medium">Volunteer Experience</h2>
           {resumeData.volunteer.map((vol) => (
             <Card key={vol.organization} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <div>
                 <h3 className="text-lg font-medium">{vol.organization}</h3>
-                <h4 className="text-sm font-semibold text-gray-500">{vol.role}</h4>
                 <p className="text-sm text-gray-600">{vol.startDate} - {vol.endDate}</p>
+                <h4 className="text-sm font-semibold text-gray-500">{vol.role}</h4>
                 <p className="text-sm text-gray-600">{vol.description}</p>
               </div>
             </Card>
           ))}
+
+
+
         </div>
       </div>
     </section>
