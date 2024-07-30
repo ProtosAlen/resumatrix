@@ -1,0 +1,138 @@
+{
+  "contact": {
+    "name": "Alen Naumoski",
+    "email": "alenn@infofix.eu",
+    "phone": "+386 00 000 000",
+    "linkedin": "linkedin.com/in/alen-naumoski"
+  },
+  "summary": "Visoko motiviran in vsestranski strokovnjak z izkušnjami na področjih programiranja, oblikovanja in upravljanja projektov. Dokazane izkušnje pri vodenju ekip in uspešnem izvajanju projektov v različnih panogah.",
+  "skills": [
+    "Programiranje",
+    "Raziskovanje",
+    "Administracija",
+    "Oblikovanje uporabniške izkušnje (UX)",
+    "Vodenje projektov",
+    "Organizacijske sposobnosti",
+    "Kreativnost",
+    "Analitično razmišljanje",
+    "Osredotočenost",
+    "Prilagodljivost",
+    "Timsko delo",
+    "Reševanje problemov"
+  ],
+  "education": [
+    {
+      "degree": "Univerzitetni diplomirani inženir računalništva in informatike",
+      "institution": "Prizma: IN-SITU",
+      "year": "2021"
+    },
+    {
+      "degree": "Certifikat iz medkulturne komunikacije",
+      "institution": "X-Culture",
+      "year": "2020"
+    },
+    {
+      "degree": "",
+      "institution": "Mladinski inkubator",
+      "year": "2020"
+    },
+    {
+      "degree": "",
+      "institution": "Grow Slovenia with Google",
+      "year": "2021"
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "SIING",
+      "title": "Scrum Master, UX/UI oblikovalec, Angular razvijalec, Varnostni strokovnjak",
+      "startDate": "2.2022",
+      "endDate": "9.2022",
+      "responsibilities": [
+        "Vodi agilne razvojne procese",
+        "Oblikoval uporabniške vmesnike in izkušnje",
+        "Razvil aplikacije Angular",
+        "Izvajanje varnostnih ukrepov"
+      ]
+    },
+    {
+      "company": "ANAplus",
+      "title": "Vodja razvoja in oblikovanja Angular aplikacij",
+      "startDate": "12.2022",
+      "endDate": "02.2023",
+      "responsibilities": [
+        "Vodil projekte razvoja Angular aplikacij",
+        "Oblikoval vizualne elemente in uporabniške vmesnike",
+        "Izvajanje programskih rešitev"
+      ]
+    },
+    {
+      "company": "ANAplus",
+      "title": "Vodja razvoja in oblikovanja Angular aplikacij",
+      "startDate": "01.2021",
+      "endDate": "09.2022",
+      "responsibilities": [
+        "Sodeloval v oblikovanju",
+        "Izvajanje programskih funkcionalnosti"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "InfoFix.eu",
+      "description": "Platforma skupnosti za izmenjavo informacij in storitev",
+      "technologies": ["Angular", "TypeScript", "HTML", "SCSS", "Node.js", "PHP"]
+    },
+    {
+      "title": "Popravimo Maribor: E-klopca",
+      "description": "Iniciativa skupnosti za izboljšanje Maribora",
+      "technologies": []
+    },
+    {
+      "title": "Unite locally to reconnect after Covid",
+      "description": "Izobraževanje organizatorjev in vodstvenih delavcev",
+      "technologies": []
+    },
+    {
+      "title": "Adria RawMaterials Incubator Lectures & Hackathon",
+      "description": "Razvoj inovativnih rešitev za trg izmenjave odpadkov",
+      "technologies": []
+    },
+    {
+      "title": "Optimizacija poslovnih dokumentov",
+      "description": "Izboljšanje učinkovitosti ustvarjanja dokumentov s progresivno spletno aplikacijo",
+      "technologies": ["Angular", "PWA"]
+    },
+    {
+      "title": "Igralni strežnik",
+      "description": "Upravljanje strežnika Minecraft z več kot 100 igralci",
+      "technologies": ["Java", "Minecraft", "Waterfall"]
+    },
+    {
+      "title": "SIING - Razvoj aplikacije za inventuro ",
+      "description": "Mobilna aplikacija za skeniranje črtnih kod",
+      "technologies": ["Flutter", "Dart", "Android SDK"]
+    },
+    {
+      "title": "SIING - Angular PWA za prikaz delovnega časa zaposlenih",
+      "description": "Progresivna spletna aplikacija, ki omogoča zaposlenim pregled nad delovnim časom in vodstvu analizo delovnih ur.",
+      "technologies": ["Angular", "TypeScript", "Material Design","Service workers"]
+  },
+  {
+      "title": "SIING - Spletni portal za ogled podatkovnih zapisov",
+      "description": "Spletni portal, ki omogoča interaktivno raziskovanje in analizo različnih podatkovnih nizov.",
+      "technologies": ["Angular", "Node.js", "MySQL"]
+  }
+  ],
+  "certifications": [],
+  "awards": [],
+  "volunteer": [
+    {
+      "organization": "Banka idej @ MKC Maribor",
+      "role": "Prostovoljec za ocenjevanje projektov",
+      "startDate": "2021",
+      "endDate": "",
+      "description": "Prispeval k ocenjevanju projektov z ocenjevanjem predlogov, svetovanjem in podporo pri razvoju projektov."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+    "personalInformation": {
+      "name": "Test Name",
+      "email": "test.email@gmail.com",
+      "phone": "+300 000 005",
+      "location": "Maribor, Slovenia",
+      "summary": "Maribor, Slovenia"
+    },
+    "skills": [
+      "Organization",
+      "Project Management"
+ 
+    ],
+    "workHistory": [
+      {
+        "company": "ANAplus",
+        "position": "Lead Designer & Programmer",
+        "dates": "12/2022-02/2023",
+        "responsibilities": [
+          "Developed and implemented WordPress sites, themes and plugins."
+         
+        ]
+      }
+
+    ],
+    "education": [
+      {
+        "degree": "Prizma: IN-SITU",
+        "institution": "InfoFix.eu",
+        "dates": "01/2021",
+        "projects": ["Developed & presented project"]
+      }
+
+    ],
+    "certifications": [
+      {
+        "name": "X-Culture",
+        "organization": "Online",
+        "date": "Online 2020",
+        "certificate": "International Business Communication"
+      }
+    ],
+    "projects": [
+      {
+        "name": "e-klopca",
+        "description": "Leading teams »Popravimo Maribor« & InfoFix",
+        "technologies": ["Project Management & Planning"],
+        "link": "Leading teams »Popravimo Maribor« & InfoFix"
+      }
+    ],
+    "experience": [
+        {
+          "company": "e-klopca",
+          "position": "Leading teams »Popravimo Maribor« & InfoFix",
+          "dates": "Leading teams »Popravimo Maribor« & InfoFix",
+          "responsibilities": ["Project Management & Planning"]
+        }
+
+    
+      ]
+
+  }
+  
