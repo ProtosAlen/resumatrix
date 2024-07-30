@@ -1,21 +1,20 @@
-import { title } from '@/components/primitives';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from '@/store/store'; // Import the RootState type
 import {
   updateContactName,
   updateContactEmail,
-  updateContactPhone,
-  updateContactLinkedin,
+  // updateContactPhone,
+  // updateContactLinkedin,
   updateSummary,
-  addSkill,
-  removeSkill,
-  updateSkill,
-  addEducation,
-  updateEducation,
-  removeEducation,
+  // addSkill,
+  // removeSkill,
+  // updateSkill,
+  // addEducation,
+  // updateEducation,
+  // removeEducation,
 
-  removeWorkExperience,
+  // removeWorkExperience,
   // Add similar action creators for other sections
 } from '@/store/reducers/resumeData';
 
@@ -31,13 +30,13 @@ export default function EditResume() {
     dispatch(updateContactEmail(e.target.value));
   };
 
-  const handleContactPhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(updateContactPhone(e.target.value));
-  };
+  // const handleContactPhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   dispatch(updateContactPhone(e.target.value));
+  // };
 
-  const handleContactLinkedinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(updateContactLinkedin(e.target.value));
-  };
+  // const handleContactLinkedinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   dispatch(updateContactLinkedin(e.target.value));
+  // };
 
   const handleSummaryChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(updateSummary(e.target.value));
