@@ -2,7 +2,6 @@ import { RootState } from '@/store/store';
 import { Card, Button, Divider } from '@nextui-org/react';
 import { useSelector } from 'react-redux';
 
-
 export default function ViewResume() {
   const resumeData = useSelector((state: RootState) => state.resumeData);
 
