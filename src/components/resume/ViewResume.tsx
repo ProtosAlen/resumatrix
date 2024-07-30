@@ -18,7 +18,7 @@ export default function ViewResume() {
         <h3>View</h3>
       </div>
 
-      <div className="resume-container grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="resume-container ">
         <div className="resume-left p-4 bg-gray-200 shadow-md rounded-lg mb-4">
           <h1 className="text-3xl font-bold">{resumeData.contact.name}</h1>
           <ul className="contact-info space-y-2">
@@ -67,6 +67,7 @@ export default function ViewResume() {
             <Card key={additional.category} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <h3 className="text-lg font-medium">{additional.category}</h3>
               <p className="text-sm text-gray-600">{additional.details}</p>
+              <h4 className="text-sm font-semibold text-gray-500">{additional.technologies.join(', ')}</h4>
             </Card>
           ))}
           <Divider />
@@ -95,8 +96,7 @@ export default function ViewResume() {
             <Card key={project.title} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <h3 className="text-lg font-medium">{project.title}</h3>
               <p className="text-sm text-gray-600">{project.description}</p>
-              <h4 className="text-sm font-semibold text-gray-500">Technologies</h4>
-              <p className="text-sm text-gray-600">{project.technologies.join(', ')}</p>
+              <h4 className="text-sm font-semibold text-gray-500">{project.technologies.join(', ')}</h4>
             </Card>
           ))}
 

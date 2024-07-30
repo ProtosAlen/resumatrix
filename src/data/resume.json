@@ -92,7 +92,14 @@
     {
       "title": "InfoFix.eu",
       "description": "Platforma za izmenjavo informacij in storitev",
-      "technologies": ["Angular", "TypeScript", "HTML", "SCSS", "Node.js", "PHP"]
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "HTML",
+        "SCSS",
+        "Node.js",
+        "PHP"
+      ]
     },
     {
       "title": "Popravimo Maribor: E-klopca",
@@ -102,27 +109,66 @@
     {
       "title": "Optimizacija poslovnih dokumentov",
       "description": "Izboljšanje učinkovitosti z uporabo progresivne spletne aplikacije",
-      "technologies": ["Angular", "PWA"]
+      "technologies": [
+        "Angular",
+        "PWA"
+      ]
     },
     {
       "title": "Igralni strežnik",
       "description": "Upravljanje Minecraft strežnika z več kot 100 igralci",
-      "technologies": ["Java", "Minecraft", "Waterfall"]
+      "technologies": [
+        "Java",
+        "Waterfall"
+      ]
     },
     {
       "title": "SIING - Razvoj aplikacije za inventuro",
       "description": "Mobilna aplikacija za skeniranje črtnih kod",
-      "technologies": ["Flutter", "Dart", "Android SDK"]
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "Android SDK"
+      ]
     },
     {
       "title": "SIING - Angular PWA za prikaz delovnega časa zaposlenih",
       "description": "Progresivna spletna aplikacija za pregled in analizo delovnega časa",
-      "technologies": ["Angular", "TypeScript", "Material Design", "Service Workers"]
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "Material Design",
+        "Service Workers"
+      ]
     },
     {
       "title": "SIING - Spletni portal za ogled podatkovnih zapisov",
       "description": "Portal za interaktivno raziskovanje in analizo podatkov",
-      "technologies": ["Angular", "Node.js", "MySQL"]
+      "technologies": [
+        "Angular",
+        "Node.js",
+        "MySQL"
+      ]
+    },
+    {
+      "title": "Razvoj aplikacij in video iger",
+      "description": "Proizvedel 2 večji video igri in 50+ manjših aplikacij/iger",
+      "technologies": [
+        "C#",
+        "Unity",
+        "Android Studio",
+        "WPF"
+      ]
+    },
+    {
+      "title": "Oblikovanje in razvoj spletnih strani",
+      "description": "Oblikoval 20+ spletnih strani z kodo in različnimi orodji",
+      "technologies": [
+        "Angular",
+        "React",
+        "Wordpress",
+        "Weebly"
+      ]
     }
   ],
   "certifications": [],
@@ -139,39 +185,73 @@
   "additional": [
     {
       "category": "Programiranje",
-      "details": "Odlično znanje razvoja namiznih in mobilnih aplikacij s C#, JavaScript, HTML5, SCSS, PHP, SQL, Dart, TypeScript, Node.js, .NET in Kotlin."
+      "details": "Moje spretnosti zajemajo razvoj programske opreme z uporabo širokega spektra tehnologij.",
+      "technologies": [
+        "C#",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        ".NET",
+        "PHP",
+        "HTML5",
+        "SCSS",
+        "SQL",
+        "Dart",
+        "Kotlin"
+      ]
     },
     {
       "category": "DevOps",
-      "details": "Upravljanje kode, nadzor različic, avtomatizacija, proizvodni pipeline-i. (Jenkins, Git, Sourcetree, GitLab, Bitbucket, Jira)"
+      "details": "Upravljanje kode, nadzor različic, avtomatizacija, proizvodni pipeline-i.",
+      "technologies": [
+        "Vercel",
+        "Jenkins",
+        "Git",
+        "Sourcetree",
+        "GitLab",
+        "Bitbucket",
+        "Jira"
+      ]
     },
     {
       "category": "Baze podatkov",
-      "details": "Izkušnje s produkcijskimi MySQL, MariaDB in PostgreSQL bazami."
+      "details": "Izkušnje s produkcijskimi MySQL, MariaDB in PostgreSQL bazami.",
+      "technologies": []
     },
     {
-      "category": "Razvoj aplikacij in video iger",
-      "details": "Proizvedel 2 večji video igri in 50+ manjših aplikacij/iger. (Unity, Android Studio, WPF)"
-    },
-    {
-      "category": "Promocija",
-      "details": "Zgradil socialna omrežja, ustvaril oglaševalske kampanje. (Instagram, Facebook, AdWords, GAnalytics)"
+      "category": "Marketing",
+      "details": "Zgradil socialna omrežja, ustvaril oglaševalske kampanje.",
+      "technologies": [
+        "Meta/Facebook",
+        "AdWords",
+        "Google Analytics"
+      ]
     },
     {
       "category": "Grafično oblikovanje in 3D modeliranje",
-      "details": "Oblikoval logotipe, teksture za video igre, majice, 3D objekte in animacije. (Illustrator, Blender)"
+      "details": "Oblikoval logotipe, teksture za video igre, majice, 3D objekte in animacije.",
+      "technologies": [
+        "Blender",
+        "Adobe Illustrator"
+      ]
     },
     {
       "category": "Urejanje videov in fotografij",
-      "details": "Urejal promocijske videe, male filme, YouTube videe. (Photoshop, Premiere, After Effects)"
+      "details": "Urejal promocijske videe, male filme, YouTube videe.",
+      "technologies": [
+        "Adobe Photoshop",
+        "Premiere",
+        "After Effects"
+      ]
     },
     {
-      "category": "Oblikovanje in razvoj spletnih strani",
-      "details": "Oblikoval 20+ spletnih strani z kodo in različnimi orodji. (Weebly, Wix, Wordpress, Angular)"
-    },
-    {
-      "category": "Upravljanje strežnikov",
-      "details": "Upravljanje strežnikov za video igre, progresivne spletne aplikacije in baze podatkov."
+      "category": "Upravljanje večjih strežnikov",
+      "details": "Upravljanje strežnikov za video igre, progresivne spletne aplikacije in baze podatkov.",
+      "technologies": [
+        "XAMPP",
+        "Linux Server",
+        "Java"
+      ]
     }
   ]
 }
