@@ -3,10 +3,47 @@ import { Card, Button, Divider } from '@nextui-org/react';
 import { useSelector } from 'react-redux';
 
 import { CiMail, CiPhone, CiLinkedin } from "react-icons/ci";
+import generateResumePDF from './pdfHelper';
+import { useState } from 'react';
+
+
 
 
 export default function ViewResume() {
+
+
   const resumeData = useSelector((state: RootState) => state.resumeData);
+
+
+  const [isDownloading, setIsDownloading] = useState(false); // Download state
+
+  const handleDownloadPDF = async () => {
+    try {
+      const response = await fetch('/api/generate-pdf', {
+        method: 'POST',
+        body: JSON.stringify(resumeData),
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (!response.ok) {
+        throw new Error('Error generating PDF: ' + (await response.text()));
+      }
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href
+        = url;
+      link.download = 'resume.pdf';
+      link.click();
+      URL.revokeObjectURL(url);
+
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+    }
+  };
+
+
 
   // Static booleans to control section visibility
   const showCertifications = false;
@@ -17,7 +54,7 @@ export default function ViewResume() {
       <div className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <h3>View</h3>
       </div>
-
+      <Button onClick={handleDownloadPDF}>Download PDF</Button>
       <div className="resume-container ">
         <div className="resume-left p-4 bg-gray-200 shadow-md rounded-lg mb-4">
           <h1 className="text-3xl font-bold">{resumeData.contact.name}</h1>
@@ -83,9 +120,19 @@ export default function ViewResume() {
               <h4 className="text-sm font-semibold text-gray-500">{exp.title}</h4>
 
               <ul className="list-disc pl-4 text-sm">
-                {exp.responsibilities.map((resp) => (
-                  <li key={resp}>{resp}</li>
-                ))}
+                {exp.responsibilities && Array.isArray(exp.responsibilities) ? (
+                  <ul>
+                    {exp.responsibilities.map((responsibility, index) => (
+                      <li key={index}>{responsibility}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>No responsibilities listed.</p>
+                )}
+
+// For debugging:
+                console.log('exp.responsibilities:', exp.responsibilities);
+                console.log('Array check:', Array.isArray(exp.responsibilities));
               </ul>
 
             </Card>
@@ -139,6 +186,10 @@ export default function ViewResume() {
           <Divider />
         </div>
       </div>
-    </section>
+    </section >
   );
+
+
 }
+
+

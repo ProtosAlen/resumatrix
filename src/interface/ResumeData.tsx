@@ -38,4 +38,5 @@ export interface ResumeData {
     details: string;
     technologies: string[];
   }[];
+  [key: string]: any;
 }

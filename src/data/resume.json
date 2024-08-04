@@ -67,7 +67,7 @@
       ]
     },
     {
-      "company": "ANAplus",
+      "company": "ANAplus 2.",
       "title": "Vodja razvoja in oblikovanja Angular aplikacij",
       "startDate": "12.2022",
       "endDate": "2.2023",
@@ -119,7 +119,7 @@
     },
     {
       "title": "Igralni strežnik",
-      "description": "Upravljanje Minecraft strežnika z več kot 100 igralci",
+      "description": "Upravljanje Minecraft strežnika z več kot 100 sočasnimi igralci",
       "technologies": [
         "Java",
         "Waterfall"
@@ -235,8 +235,8 @@
       "details": "Zgradil socialna omrežja, ustvaril oglaševalske kampanje.",
       "technologies": [
         "Meta/Facebook",
-        "AdWords",
-        "Google Analytics"
+        "Google Analytics",
+        "AdWords"
       ]
     },
     {
