@@ -43,19 +43,20 @@ export default async function generateResumePDF(): Promise<Uint8Array> {
   try {
     console.log('resumeData:', resumeData); // Check if resumeData is available
 
+    // const doc = (
+    //   <Document>
+    //     <Page size="A4" style={styles.container}>
+    //       {/* Your PDF content here, using resumeData */}
+    //       <Text>This is a test</Text> // Temporary test content
+    //     </Page>
+    //   </Document>
+    // );
+
+
+
     const doc = (
-      <Document>
-        <Page size="A4" style={styles.container}>
-          {/* Your PDF content here, using resumeData */}
-          <Text>This is a test</Text> // Temporary test content
-        </Page>
-      </Document>
-    );
-
-    console.log('doc:', doc); // Check if doc is created correctly
 
 
-    const doc2 = (
       <Document>
         <Page size="A4" style={styles.container}>
           <View>
@@ -140,11 +141,18 @@ export default async function generateResumePDF(): Promise<Uint8Array> {
                   ))}
                 </>
               )
+
+
             ))}
           </View>
         </Page>
       </Document>
+
+
     );
+
+    console.log('doc:', doc); // Check if doc is created correctly
+
 
     const buffer = await renderToBuffer(doc);
     return buffer;
