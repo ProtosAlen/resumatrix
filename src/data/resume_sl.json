@@ -55,8 +55,19 @@
   ],
   "workExperience": [
     {
+      "company": "100kvadratov",
+      "title": "UX/UI oblikovalec, React & Laravel razvijalec",
+      "startDate": "8.2023",
+      "endDate": "2.2024",
+      "responsibilities": [
+        "Vodenje agilnih razvojnih procesov",
+        "Oblikovanje uporabniških vmesnikov in izkušenj",
+        "Razvoj aplikacij v React & Laravel"
+      ]
+    },
+    {
       "company": "SIING",
-      "title": "Scrum Master, UX/UI oblikovalec, Angular razvijalec, Varnostni strokovnjak",
+      "title": "Scrum vodja, UX/UI oblikovalec, Angular razvijalec, Varnostni strokovnjak",
       "startDate": "2.2022",
       "endDate": "9.2022",
       "responsibilities": [
@@ -89,6 +100,17 @@
     }
   ],
   "projects": [
+    {
+      "title": "Resumatrix",
+      "description": "Razvil sem aplikacijo, ki omogoča uporabnikom enostavno in celovito ustvarjanje profesionalnih življenjepisov",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Vite",
+        "Tailwind CSS"
+      ]
+    },
     {
       "title": "InfoFix.eu",
       "description": "Platforma za izmenjavo informacij in storitev",

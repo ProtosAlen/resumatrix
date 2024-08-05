@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     fontSize: 12,
+
     color: '#333',
   },
   columns: {
@@ -23,22 +24,31 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   header: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   section: {
-    marginBottom: 15,
+    marginBottom: 8,
+    borderRadius: 8, // Adjust radius as needed
+    padding: 4, // Optional padding
+  },
+  card: {
+    margin: 4,
+    backgroundColor: '#f0f0f0', // Light gray background
+    borderRadius: 8, // Adjust radius as needed
+    padding: 12, // Optional padding
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Light shadow
   },
   heading: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 5,
+    marginBottom: 8,
   },
   subheading: {
     fontSize: 14,
     fontWeight: 'semibold',
-    marginBottom: 3,
+    marginBottom: 4,
   },
   subheading2: {
     fontSize: 12,
@@ -49,9 +59,19 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     lineHeight: 1.5,
   },
+  techL: {
+    fontSize: 11,
+    fontWeight: 'medium',
+    color: '#ababab', // Lighter gray color
+  },
+  tech: {
+    fontSize: 11,
+    fontWeight: 'medium',
+    color: '#6b6b6b', // Lighter gray color
+  },
   list: {
     paddingLeft: 10,
-    marginBottom: 10,
+    marginBottom: 4,
   },
   listItem: {
     marginBottom: 3,
@@ -148,7 +168,7 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                     <View key={add.category} style={styles.section}>
                       <Text style={styles.subheading}>{add.category}</Text>
                       <Text style={styles.text}>{add.details}</Text>
-                      <Text style={styles.subheading2}>{add.technologies.join(', ')}</Text>
+                      <Text style={styles.techL}>{add.technologies.join(', ')}</Text>
                     </View>
                   ))}
                 </View>
@@ -161,7 +181,7 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                 <View style={styles.section}>
                   <Text style={styles.heading}>Work Experience</Text>
                   {resumeData.workExperience.map((exp) => (
-                    <View key={exp.company} style={styles.section}>
+                    <View key={exp.company} style={styles.card}>
                       <Text style={styles.subheading}>{exp.company} <Text style={styles.workDates}>{`(${exp.startDate} - ${exp.endDate})`}</Text></Text>
                       <Text style={styles.text}>
                         {exp.title}
@@ -178,10 +198,10 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                 <View style={styles.section}>
                   <Text style={styles.heading}>Projects</Text>
                   {resumeData.projects.map((project) => (
-                    <View key={project.title} style={styles.section}>
+                    <View key={project.title} style={styles.card}>
                       <Text style={styles.subheading}>{project.title}</Text>
                       <Text style={styles.text}>{project.description}</Text>
-                      <Text style={styles.text}>{project.technologies.join(', ')}</Text>
+                      <Text style={styles.tech}>{project.technologies.join(', ')}</Text>
                     </View>
                   ))}
                 </View>
@@ -189,10 +209,10 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                 <View style={styles.section}>
                   <Text style={styles.heading}>Volunteer Experience</Text>
                   {resumeData.volunteer.map((vol) => (
-                    <View key={vol.organization} style={styles.section}>
+                    <View key={vol.organization} style={styles.card}>
                       <Text style={styles.subheading}>{vol.organization}</Text>
                       <Text style={styles.text}>{vol.role}</Text>
-                      <Text style={styles.text}>{vol.startDate} - {vol.endDate}</Text>
+                      <Text style={styles.tech}>{vol.startDate} - {vol.endDate}</Text>
                       <Text style={styles.text}>{vol.description}</Text>
                     </View>
                   ))}
