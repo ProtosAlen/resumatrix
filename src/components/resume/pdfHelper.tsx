@@ -5,15 +5,22 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     fontSize: 12,
-    fontFamily: 'Helvetica',
     color: '#333',
   },
   columns: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  column: {
-    width: '48%',
+  columnLeft: {
+    width: '40%',
+    backgroundColor: '#1E3A8A', // Blue background color
+    padding: 4,
+    color: 'white',
+    borderRadius: 4,
+  },
+  columnRight: {
+    width: '60%',
+    paddingLeft: 20,
   },
   header: {
     fontSize: 24,
@@ -31,6 +38,11 @@ const styles = StyleSheet.create({
   subheading: {
     fontSize: 14,
     fontWeight: 'semibold',
+    marginBottom: 3,
+  },
+  subheading2: {
+    fontSize: 12,
+    fontWeight: 'normal',
     marginBottom: 3,
   },
   text: {
@@ -59,11 +71,18 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   skill: {
-    backgroundColor: '#eee',
+    fontSize: 10,
+    backgroundColor: '#d1d1d1',
+    color: 'black',
     padding: 5,
-    borderRadius: 5,
+    borderRadius: 10,
     marginRight: 5,
     marginBottom: 5,
+  },
+  workDates: {
+    fontSize: 10,
+    color: '#a8a8a8',
+
   },
 });
 
@@ -79,7 +98,7 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
             <View style={styles.columns}>
 
               {/* Col 1 */}
-              <View style={styles.column}>
+              <View style={styles.columnLeft}>
                 <View style={styles.section}>
                   <Text style={styles.header}>{resumeData.contact.name}</Text>
                   <View style={styles.contactInfo}>
@@ -129,7 +148,7 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                     <View key={add.category} style={styles.section}>
                       <Text style={styles.subheading}>{add.category}</Text>
                       <Text style={styles.text}>{add.details}</Text>
-                      <Text style={styles.text}>{add.technologies}</Text>
+                      <Text style={styles.subheading2}>{add.technologies.join(', ')}</Text>
                     </View>
                   ))}
                 </View>
@@ -138,14 +157,14 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
 
 
               {/* Col 2 */}
-              <View style={styles.column}>
+              <View style={styles.columnRight}>
                 <View style={styles.section}>
                   <Text style={styles.heading}>Work Experience</Text>
                   {resumeData.workExperience.map((exp) => (
                     <View key={exp.company} style={styles.section}>
-                      <Text style={styles.subheading}>{exp.company}</Text>
+                      <Text style={styles.subheading}>{exp.company} <Text style={styles.workDates}>{`(${exp.startDate} - ${exp.endDate})`}</Text></Text>
                       <Text style={styles.text}>
-                        {exp.title} <Text style={{ color: '#ccc' }}>{`(${exp.startDate} - ${exp.endDate})`}</Text>
+                        {exp.title}
                       </Text>
                       <View style={styles.list}>
                         {exp.responsibilities.map((responsibility, index) => (
@@ -162,7 +181,7 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                     <View key={project.title} style={styles.section}>
                       <Text style={styles.subheading}>{project.title}</Text>
                       <Text style={styles.text}>{project.description}</Text>
-                      <Text style={styles.text}>Technologies: {project.technologies.join(', ')}</Text>
+                      <Text style={styles.text}>{project.technologies.join(', ')}</Text>
                     </View>
                   ))}
                 </View>
