@@ -3,6 +3,7 @@ import { Card, Button, Divider } from '@nextui-org/react';
 import { useSelector } from 'react-redux';
 
 import { CiMail, CiPhone, CiLinkedin } from "react-icons/ci";
+import GenerateResumePDF from './pdfHelper';
 
 export default function ViewResume() {
 
@@ -12,22 +13,14 @@ export default function ViewResume() {
 
   const handleDownloadPDF = async () => {
     try {
-      const response = await fetch('/api/generate-pdf', {
-        method: 'GET',
-      });
+      const buffer = await GenerateResumePDF(resumeData); // Use the imported generateResumePDF function
 
-      console.log("rD: ", response, "buffer: ",)
+      const blob = new Blob([buffer], { type: 'application/pdf' });
 
-      if (!response.ok) {
-        throw new Error('Error generating PDF: ' + (await response.text()));
-      }
-
-      const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download
-        = 'Resume.pdf';
+      link.download = 'Resume.pdf';
       link.click();
 
       URL.revokeObjectURL(url);
@@ -36,6 +29,7 @@ export default function ViewResume() {
       // Handle errors appropriately (e.g., display error message to user)
     }
   };
+
 
   // Static booleans to control section visibility
   const showCertifications = false;

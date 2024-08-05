@@ -1,163 +1,220 @@
-import { Document, Page, View, Text, StyleSheet, renderToBuffer } from '@react-pdf/renderer';
-import { RootState } from '@/store/store';
+import { Document, Page, View, Text, StyleSheet, pdf } from '@react-pdf/renderer';
 import { ResumeData } from '@/interface/ResumeData';
-import { useSelector } from 'react-redux';
 
 const styles = StyleSheet.create({
   container: {
     padding: 20,
     fontSize: 12,
+    fontFamily: 'Helvetica',
+    color: '#333',
+  },
+  columns: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  column: {
+    width: '48%',
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  section: {
+    marginBottom: 15,
   },
   heading: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   subheading: {
     fontSize: 14,
     fontWeight: 'semibold',
+    marginBottom: 3,
+  },
+  text: {
     marginBottom: 5,
+    lineHeight: 1.5,
+  },
+  list: {
+    paddingLeft: 10,
+    marginBottom: 10,
   },
   listItem: {
-    marginBottom: 5,
+    marginBottom: 3,
   },
   contactInfo: {
-    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   contactIcon: {
     marginRight: 5,
-    fontSize: 18,
-    color: '#ccc',
+    fontSize: 14,
+  },
+  skillsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginBottom: 10,
+  },
+  skill: {
+    backgroundColor: '#eee',
+    padding: 5,
+    borderRadius: 5,
+    marginRight: 5,
+    marginBottom: 5,
   },
 });
 
-
-const resumeData = useSelector((state: RootState) => state.resumeData);
-
-export default async function generateResumePDF(): Promise<Uint8Array> {
-
-
-  try {
-    console.log('resumeData:', resumeData); // Check if resumeData is available
-
-    // const doc = (
-    //   <Document>
-    //     <Page size="A4" style={styles.container}>
-    //       {/* Your PDF content here, using resumeData */}
-    //       <Text>This is a test</Text> // Temporary test content
-    //     </Page>
-    //   </Document>
-    // );
+export default function GenerateResumePDF(resumeData: ResumeData) {
 
 
 
-    const doc = (
+  const handleGeneratePDF = async () => {
+    try {
+      const doc = (
+        <Document>
+          <Page size="A4" style={styles.container}>
+            <View style={styles.columns}>
 
+              {/* Col 1 */}
+              <View style={styles.column}>
+                <View style={styles.section}>
+                  <Text style={styles.header}>{resumeData.contact.name}</Text>
+                  <View style={styles.contactInfo}>
+                    <Text style={styles.contactIcon}>✉️</Text>
+                    <Text>{resumeData.contact.email}</Text>
+                  </View>
+                  <View style={styles.contactInfo}>
+                    <Text style={styles.contactIcon}>📞</Text>
+                    <Text>{resumeData.contact.phone}</Text>
+                  </View>
+                  <View style={styles.contactInfo}>
+                    <Text style={styles.contactIcon}>🔗</Text>
+                    <Text style={styles.contactIcon}>
+                      {resumeData.contact.linkedin}
+                    </Text>
+                  </View>
+                </View>
 
-      <Document>
-        <Page size="A4" style={styles.container}>
-          <View>
-            {/* Contact Information */}
-            <View style={styles.contactInfo}>
-              <Text style={styles.contactIcon}>✉️</Text>
-              <Text>{resumeData.contact.email}</Text>
-            </View>
-            <View style={styles.contactInfo}>
-              <Text style={styles.contactIcon}>📞</Text>
-              <Text>{resumeData.contact.phone}</Text>
-            </View>
-            <View style={styles.contactInfo}>
-              <Text style={styles.contactIcon}>linkedin</Text>
-              <Text>
-                <a href={resumeData.contact.linkedin} target="_blank" rel="noreferrer">
-                  {resumeData.contact.linkedin}
-                </a>
-              </Text>
-            </View>
+                <View style={styles.section}>
+                  <Text style={styles.heading}>Summary</Text>
+                  <Text style={styles.text}>{resumeData.summary}</Text>
+                </View>
 
-            {/* Name */}
-            <Text style={styles.heading}>{resumeData.contact.name}</Text>
+                <View style={styles.section}>
+                  <Text style={styles.heading}>Skills</Text>
+                  <View style={styles.skillsContainer}>
+                    {resumeData.skills.map((skill) => (
+                      <Text key={skill} style={styles.skill}>{skill}</Text>
+                    ))}
+                  </View>
+                </View>
 
-            {/* Summary */}
-            <Text style={styles.subheading}>Summary</Text>
-            <Text>{resumeData.summary}</Text>
-
-            {/* Skills */}
-            <Text style={styles.subheading}>Skills</Text>
-            <View style={{ display: 'flex', flexWrap: 'wrap' }}>
-              {resumeData.skills.map((skill) => (
-                <Text key={skill} style={{ marginRight: 10, backgroundColor: '#eee', padding: 5, borderRadius: 5 }}>
-                  {skill}
-                </Text>
-              ))}
-            </View>
-
-            {/* Education */}
-            <Text style={styles.subheading}>Education</Text>
-            {resumeData.education.map((edu) => (
-              <View key={edu.degree} style={{ marginBottom: 10 }}>
-                <Text style={styles.subheading}>{edu.degree}</Text>
-                <Text>{edu.institution}</Text>
-                <Text>{edu.year}</Text>
-              </View>
-            ))}
-
-            {/* Additional Sections */}
-            {['Additional', 'Work Experience', 'Projects', 'Volunteer Experience'].map((section) => (
-              resumeData[section.toLowerCase()]?.length > 0 && (
-                <>
-                  <Text style={styles.subheading}>{section}</Text>
-                  {resumeData[section.toLowerCase()]?.map((item: ResumeData[keyof ResumeData][number]) => (
-                    <View key={item.title || item.organization} style={{ marginBottom: 10 }}>
-                      {section === 'Work Experience' && (
-                        <Text>
-                          {item.company}
-                          <Text style={{ color: '#ccc' }}>{` (${item.startDate} - ${item.endDate}) `}</Text>
-                        </Text>
-                      )}
-                      {section !== 'Work Experience' && <Text>{item.title}</Text>}
-                      {item.description && <Text>{item.description}</Text>}
-                      {section === 'Additional' && item.technologies && (
-                        <Text>Technologies: {item.technologies.join(', ')}</Text>
-                      )}
-                      {section === 'Work Experience' && item.responsibilities && (
-                        <ul style={{ paddingLeft: 20 }}>
-                          {item.responsibilities.map((responsibility: string) => (
-                            <li key={responsibility}>{responsibility}</li>
-                          ))}
-                        </ul>
-                      )}
-                      {section === 'Certifications' || section === 'Awards' ? (
-                        <ul style={{ paddingLeft: 20 }}>
-                          {item.map((certOrAward: string) => (
-                            <li key={certOrAward}>{certOrAward}</li>
-                          ))}
-                        </ul>
-                      ) : null}
+                <View style={styles.section}>
+                  <Text style={styles.heading}>Education</Text>
+                  {resumeData.education.map((edu) => (
+                    <View key={edu.degree} style={styles.section}>
+                      <Text style={styles.subheading}>{edu.degree}</Text>
+                      <Text style={styles.text}>{edu.institution}</Text>
+                      <Text style={styles.text}>{edu.year}</Text>
                     </View>
                   ))}
-                </>
-              )
+                </View>
+
+                <View style={styles.section}>
+                  <Text style={styles.heading}>Additional</Text>
+                  {resumeData.additional.map((add) => (
+                    <View key={add.category} style={styles.section}>
+                      <Text style={styles.subheading}>{add.category}</Text>
+                      <Text style={styles.text}>{add.details}</Text>
+                      <Text style={styles.text}>{add.technologies}</Text>
+                    </View>
+                  ))}
+                </View>
+
+              </View>
 
 
-            ))}
-          </View>
-        </Page>
-      </Document>
+              {/* Col 2 */}
+              <View style={styles.column}>
+                <View style={styles.section}>
+                  <Text style={styles.heading}>Work Experience</Text>
+                  {resumeData.workExperience.map((exp) => (
+                    <View key={exp.company} style={styles.section}>
+                      <Text style={styles.subheading}>{exp.company}</Text>
+                      <Text style={styles.text}>
+                        {exp.title} <Text style={{ color: '#ccc' }}>{`(${exp.startDate} - ${exp.endDate})`}</Text>
+                      </Text>
+                      <View style={styles.list}>
+                        {exp.responsibilities.map((responsibility, index) => (
+                          <Text key={index} style={styles.listItem}>• {responsibility}</Text>
+                        ))}
+                      </View>
+                    </View>
+                  ))}
+                </View>
 
+                <View style={styles.section}>
+                  <Text style={styles.heading}>Projects</Text>
+                  {resumeData.projects.map((project) => (
+                    <View key={project.title} style={styles.section}>
+                      <Text style={styles.subheading}>{project.title}</Text>
+                      <Text style={styles.text}>{project.description}</Text>
+                      <Text style={styles.text}>Technologies: {project.technologies.join(', ')}</Text>
+                    </View>
+                  ))}
+                </View>
 
-    );
+                <View style={styles.section}>
+                  <Text style={styles.heading}>Volunteer Experience</Text>
+                  {resumeData.volunteer.map((vol) => (
+                    <View key={vol.organization} style={styles.section}>
+                      <Text style={styles.subheading}>{vol.organization}</Text>
+                      <Text style={styles.text}>{vol.role}</Text>
+                      <Text style={styles.text}>{vol.startDate} - {vol.endDate}</Text>
+                      <Text style={styles.text}>{vol.description}</Text>
+                    </View>
+                  ))}
+                </View>
 
-    console.log('doc:', doc); // Check if doc is created correctly
+                {resumeData.certifications && resumeData.certifications.length > 0 && (
+                  <View style={styles.section}>
+                    <Text style={styles.heading}>Certifications</Text>
+                    <View style={styles.list}>
+                      {resumeData.certifications.map((cert) => (
+                        <Text key={cert} style={styles.listItem}>• {cert}</Text>
+                      ))}
+                    </View>
+                  </View>
+                )}
 
+                {resumeData.awards && resumeData.awards.length > 0 && (
+                  <View style={styles.section}>
+                    <Text style={styles.heading}>Awards</Text>
+                    <View style={styles.list}>
+                      {resumeData.awards.map((award) => (
+                        <Text key={award} style={styles.listItem}>• {award}</Text>
+                      ))}
+                    </View>
+                  </View>
+                )}
+              </View>
+            </View>
+          </Page>
+        </Document>
+      );
+      const pdfBlob = await pdf(doc).toBlob();
+      return pdfBlob;
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      throw error;
+    }
+  };
 
-    const buffer = await renderToBuffer(doc);
-    return buffer;
-  } catch (error) {
-    console.error('Error generating PDF:', error);
-    throw error; // Re-throw the error for proper handling
-  }
+  return handleGeneratePDF();
 }
+
+
+
