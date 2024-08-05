@@ -1,18 +1,24 @@
 import { title } from '@/components/primitives';
 import DefaultLayout from '@/layouts/default';
 
-import ViewResume from '@/components/resume/ViewResume'; 
+import ViewResume from '@/components/resume/ViewResume';
 import EditResume from '@/components/resume/EditResume';
+import { Divider } from '@nextui-org/react';
 
 export default function ResumeBuilderPage() {
 
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>Resume Builder</h1>
-        </div>
 
+        <div className="inline-block max-w-lg text-center justify-center">
+
+          <div className={title()}>
+            <h1 className={title({ color: "blue" })}>Resume Builder</h1>
+          </div>
+
+        </div>
+        <Divider />
         {/* Resume preview component */}
         <div className="w-full max-w-4xl">
           <EditResume />

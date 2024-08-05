@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "ES2020",
     "types": [
-      "node"
+      "node",
+      "@react-pdf/renderer", // Add type definitions for @react-pdf/renderer
+      "react-dom" // Add type definitions for react-dom/server
     ],
     "useDefineForClassFields": true,
     "lib": [
@@ -17,22 +19,21 @@
         "./src/*"
       ]
     },
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true // Consider enabling for better interoperability
   },
   "include": [
     "src",
-    "src/api"
+    "pages/api"
   ],
   "references": [
     {

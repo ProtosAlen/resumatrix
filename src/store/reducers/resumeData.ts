@@ -1,6 +1,8 @@
 import { ResumeData } from '@/interface/ResumeData';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import resumeData from '@/data/resume.json';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import resumeData from '@/data/resume_sl.json';
+//import resumeData2 from '@/data/resume_en.json';
 
 const initialState: ResumeData = resumeData;
 
@@ -118,6 +120,18 @@ const resumeSlice = createSlice({
     },
   },
 });
+
+// Thunk to load resume data from JSON file
+export const loadResume = createAsyncThunk(
+  'resumeData/loadResume',
+  async (selectedLanguage: 'en' | 'default') => {
+    const response = await fetch(`/data/resume_${selectedLanguage}.json`);
+    const data = await response.json();
+    return data;
+  }
+);
+
+
 
 export const {
   updateContactName,

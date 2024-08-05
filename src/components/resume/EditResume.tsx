@@ -29,10 +29,10 @@ import {
   removeAdditional,
   addVolunteerExperience,
   updateVolunteerExperience,
-  removeVolunteerExperience
+  removeVolunteerExperience,
+  //loadResume
 } from '@/store/reducers/resumeData';
 import { Card, Divider } from '@nextui-org/react';
-import { button } from '@nextui-org/theme';
 
 export default function EditResume() {
   const dispatch = useDispatch();
@@ -165,9 +165,13 @@ export default function EditResume() {
     dispatch(removeVolunteerExperience(index));
   };
 
+
+
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <h3>Edit</h3>
+
+
       <div className="w-full max-w-3xl">
         {/* Personal information section */}
         <div className="mb-8">

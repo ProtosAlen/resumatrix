@@ -1,0 +1,63 @@
+{
+    "name": "Resumatrix",
+    "description": "Make beautifueeee websites regardless of your design experience.",
+    "navItems": [
+        {
+            "label": "Homeeee",
+            "href": "/"
+        },
+        {
+            "label": "Builder",
+            "href": "/docs"
+        },
+        {
+            "label": "Pricing",
+            "href": "/pricing"
+        },
+        {
+            "label": "About",
+            "href": "/about"
+        }
+    ],
+    "navMenuItems": [
+        {
+            "label": "Profile",
+            "href": "/profile"
+        },
+        {
+            "label": "Dashboard",
+            "href": "/dashboard"
+        },
+        {
+            "label": "Projects",
+            "href": "/projects"
+        },
+        {
+            "label": "Team",
+            "href": "/team"
+        },
+        {
+            "label": "Calendar",
+            "href": "/calendar"
+        },
+        {
+            "label": "Settings",
+            "href": "/settings"
+        },
+        {
+            "label": "Help & Feedback",
+            "href": "/help-feedback"
+        },
+        {
+            "label": "Logout",
+            "href": "/logout"
+        }
+    ],
+    "links": {
+        "github": "GitHub",
+        "twitter": "Twitter",
+        "docs": "Documentation",
+        "discord": "Discord",
+        "sponsor": "Sponsor"
+    }
+}

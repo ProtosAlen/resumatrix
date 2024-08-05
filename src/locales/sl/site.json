@@ -1,0 +1,63 @@
+{
+    "name": "Vite + NextUI",
+    "description": "Ustvarjajte čudovite spletne strani ne glede na vaše oblikovalske izkušnje.",
+    "navItems": [
+        {
+            "label": "Domov",
+            "href": "/"
+        },
+        {
+            "label": "Gradnik",
+            "href": "/docs"
+        },
+        {
+            "label": "Cenik",
+            "href": "/pricing"
+        },
+        {
+            "label": "O nas",
+            "href": "/about"
+        }
+    ],
+    "navMenuItems": [
+        {
+            "label": "Profil",
+            "href": "/profile"
+        },
+        {
+            "label": "Nadzorna plošča",
+            "href": "/dashboard"
+        },
+        {
+            "label": "Projekti",
+            "href": "/projects"
+        },
+        {
+            "label": "Ekipa",
+            "href": "/team"
+        },
+        {
+            "label": "Koledar",
+            "href": "/calendar"
+        },
+        {
+            "label": "Nastavitve",
+            "href": "/settings"
+        },
+        {
+            "label": "Pomoč in povratne informacije",
+            "href": "/help-feedback"
+        },
+        {
+            "label": "Odjava",
+            "href": "/logout"
+        }
+    ],
+    "links": {
+        "github": "GitHub",
+        "twitter": "Twitter",
+        "docs": "Dokumentacija",
+        "discord": "Discord",
+        "sponsor": "Sponzoriraj"
+    }
+}

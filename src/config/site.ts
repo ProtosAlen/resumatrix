@@ -1,69 +1,25 @@
-export type SiteConfig = typeof siteConfig;
+import * as translations from '../locales/en/site.json'; // Replace with your language file path
 
-export const siteConfig = {
-  name: "Vite + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
-  navItems: [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Builder",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    // {
-    //   label: "Blog",
-    //   href: "/blog",
-    // },
-    {
-      label: "About",
-      href: "/about",
-    },
-  ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
-    },
-  ],
+interface TranslatedSiteConfig {
+  name: string;
+  description: string;
+  navItems: { label: string; href: string }[];
+  navMenuItems: { label: string; href: string }[];
+  links: { [key: string]: string };
+}
+
+export type SiteConfig = TranslatedSiteConfig;
+
+export const siteConfig: TranslatedSiteConfig = {
+  name: translations.name,
+  description: translations.description,
+  navItems: translations.navItems,
+  navMenuItems: translations.navMenuItems,
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui-docs-v2.vercel.app",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: translations.links?.github || "https://github.com/nextui-org/nextui",
+    twitter: translations.links?.twitter || "https://twitter.com/getnextui",
+    docs: translations.links?.docs || "https://nextui-docs-v2.vercel.app",
+    discord: translations.links?.discord || "https://discord.gg/9b6yyZKmH4",
+    sponsor: translations.links?.sponsor || "https://patreon.com/jrgarciadev",
   },
 };

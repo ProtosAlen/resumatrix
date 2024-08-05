@@ -3,11 +3,6 @@ import { Card, Button, Divider } from '@nextui-org/react';
 import { useSelector } from 'react-redux';
 
 import { CiMail, CiPhone, CiLinkedin } from "react-icons/ci";
-import generateResumePDF from './pdfHelper';
-import { useState } from 'react';
-
-
-
 
 export default function ViewResume() {
 
@@ -15,35 +10,32 @@ export default function ViewResume() {
   const resumeData = useSelector((state: RootState) => state.resumeData);
 
 
-  const [isDownloading, setIsDownloading] = useState(false); // Download state
-
   const handleDownloadPDF = async () => {
     try {
       const response = await fetch('/api/generate-pdf', {
-        method: 'POST',
-        body: JSON.stringify(resumeData),
-        headers: { 'Content-Type': 'application/json' },
+        method: 'GET',
       });
+
+      console.log("rD: ", response, "buffer: ",)
 
       if (!response.ok) {
         throw new Error('Error generating PDF: ' + (await response.text()));
       }
 
       const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+      const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.href
-        = url;
-      link.download = 'resume.pdf';
+      link.href = url;
+      link.download
+        = 'Resume.pdf';
       link.click();
-      URL.revokeObjectURL(url);
 
+      URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error generating PDF:', error);
+      // Handle errors appropriately (e.g., display error message to user)
     }
   };
-
-
 
   // Static booleans to control section visibility
   const showCertifications = false;
@@ -130,9 +122,6 @@ export default function ViewResume() {
                   <p>No responsibilities listed.</p>
                 )}
 
-// For debugging:
-                console.log('exp.responsibilities:', exp.responsibilities);
-                console.log('Array check:', Array.isArray(exp.responsibilities));
               </ul>
 
             </Card>
