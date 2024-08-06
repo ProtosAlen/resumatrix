@@ -1,6 +1,14 @@
 import { Document, Page, View, Text, StyleSheet, pdf } from '@react-pdf/renderer';
 import { ResumeData } from '@/interface/ResumeData';
 
+const colors = {
+  primary: '#1E3A8A', // Blue
+  secondary: '#5c71ad', // Lighter shade of blue
+  lightGray: '#ababab', // Light gray
+  darkGray: '#333333' // Dark gray
+};
+
+
 const styles = StyleSheet.create({
   container: {
     padding: 20,
@@ -14,7 +22,7 @@ const styles = StyleSheet.create({
   },
   columnLeft: {
     width: '40%',
-    backgroundColor: '#1E3A8A', // Blue background color
+    backgroundColor: colors.primary, // Blue
     padding: 4,
     color: 'white',
     borderRadius: 4,
@@ -32,6 +40,13 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     borderRadius: 8, // Adjust radius as needed
     padding: 4, // Optional padding
+  },
+  cardL: {
+    margin: 4,
+    backgroundColor: colors.secondary,
+    borderRadius: 8, // Adjust radius as needed
+    padding: 12, // Optional padding
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Light shadow
   },
   card: {
     margin: 4,
@@ -56,13 +71,12 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   text: {
-    marginBottom: 5,
     lineHeight: 1.5,
   },
   techL: {
     fontSize: 11,
     fontWeight: 'medium',
-    color: '#ababab', // Lighter gray color
+    color: colors.lightGray
   },
   tech: {
     fontSize: 11,
@@ -154,10 +168,10 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                 <View style={styles.section}>
                   <Text style={styles.heading}>Education</Text>
                   {resumeData.education.map((edu) => (
-                    <View key={edu.degree} style={styles.section}>
+                    <View key={edu.degree} style={styles.cardL}>
                       <Text style={styles.subheading}>{edu.degree}</Text>
-                      <Text style={styles.text}>{edu.institution}</Text>
-                      <Text style={styles.text}>{edu.year}</Text>
+                      <Text style={styles.subheading2}>{edu.institution}</Text>
+                      <Text style={styles.techL}>{edu.year}</Text>
                     </View>
                   ))}
                 </View>
@@ -165,7 +179,7 @@ export default function GenerateResumePDF(resumeData: ResumeData) {
                 <View style={styles.section}>
                   <Text style={styles.heading}>Additional</Text>
                   {resumeData.additional.map((add) => (
-                    <View key={add.category} style={styles.section}>
+                    <View key={add.category} style={styles.cardL}>
                       <Text style={styles.subheading}>{add.category}</Text>
                       <Text style={styles.text}>{add.details}</Text>
                       <Text style={styles.techL}>{add.technologies.join(', ')}</Text>
