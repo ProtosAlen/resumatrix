@@ -2,18 +2,18 @@
   "contact": {
     "name": "Alen Naumoski",
     "location": "Hibridno, Slovenska Bistrica, Maribor, Slovenija",
-    "email": "test@mail.t",
-    "phone": "+386 00 000 000",
+    "email": "naumoski.alen@gmail.com",
+    "phone": "041-888-245",
     "linkedin": "linkedin.com/in/alen-naumoski"
   },
-  "summary": "Visoko motiviran strokovnjak z bogatimi izkušnjami v programiranju, oblikovanju in vodenju projektov. Uspešno vodil ekipe in izvedel projekte v različnih panogah.",
+  "summary": "Visoko motiviran full-stack razvijalec z 5+ leti izkušenj v oblikovanju in razvoju spletnih aplikacij. Odličen poznavalec React, Angular, Laravel in Node.js. Uspešno vodil več projektov od ideje do produkcije, pri čemer sem izboljšal uporabniško izkušnjo strani. Iščem nove izzive v dinamičnem okolju, kjer lahko svoje znanje in izkušnje uporabim za razvoj inovativnih rešitev.",
   "skills": [
     "Programiranje",
     "Raziskovanje",
     "Administracija",
     "Vodenje projektov",
-    "Oblikovanje uporabniške izkušnje (UX)",
     "Organizacijske sposobnosti",
+    "Oblikovanje uporabniške izkušnje (UX)",
     "Kreativnost",
     "Analitično razmišljanje",
     "Osredotočenost",
@@ -132,7 +132,36 @@
       ]
     },
     {
-      "title": "Optimizacija poslovnih dokumentov",
+      "title": "SIING: Razvoj aplikacije za inventuro",
+      "description": "Mobilna aplikacija za skeniranje črtnih kod",
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "Android SDK"
+      ]
+    },
+    {
+      "title": "SIING: Angular PWA za spremljanje delovnega časa zaposlenih",
+      "description": "Progresivna spletna aplikacija za pregled, urejanje in analizo delovnega časa",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "REST",
+        "Material Design",
+        "Service Workers"
+      ]
+    },
+    {
+      "title": "SIING: Spletni portal za ogled podatkovnih zapisov",
+      "description": "Portal za interaktivno raziskovanje in analizo podatkov",
+      "technologies": [
+        "Angular",
+        "Node.js",
+        "MySQL"
+      ]
+    },
+    {
+      "title": "ANAplus: Optimizacija poslovnih dokumentov",
       "description": "Izboljšanje učinkovitosti z uporabo progresivne spletne aplikacije",
       "technologies": [
         "Angular",
@@ -145,34 +174,6 @@
       "technologies": [
         "Java",
         "Waterfall"
-      ]
-    },
-    {
-      "title": "SIING: Razvoj aplikacije za inventuro",
-      "description": "Mobilna aplikacija za skeniranje črtnih kod",
-      "technologies": [
-        "Flutter",
-        "Dart",
-        "Android SDK"
-      ]
-    },
-    {
-      "title": "SIING: Angular PWA za prikaz delovnega časa zaposlenih",
-      "description": "Progresivna spletna aplikacija za pregled in analizo delovnega časa",
-      "technologies": [
-        "Angular",
-        "TypeScript",
-        "Material Design",
-        "Service Workers"
-      ]
-    },
-    {
-      "title": "SIING: Spletni portal za ogled podatkovnih zapisov",
-      "description": "Portal za interaktivno raziskovanje in analizo podatkov",
-      "technologies": [
-        "Angular",
-        "Node.js",
-        "MySQL"
       ]
     },
     {
@@ -248,6 +249,14 @@
       ]
     },
     {
+      "category": "Grafično oblikovanje in 3D modeliranje",
+      "details": "Oblikoval logotipe, teksture za video igre, majice, 3D objekte in animacije.",
+      "technologies": [
+        "Blender",
+        "Adobe Illustrator"
+      ]
+    },
+    {
       "category": "Baze podatkov",
       "details": "Izkušnje s produkcijskimi MySQL, MariaDB in PostgreSQL bazami.",
       "technologies": []
@@ -262,15 +271,16 @@
       ]
     },
     {
-      "category": "Grafično oblikovanje in 3D modeliranje",
-      "details": "Oblikoval logotipe, teksture za video igre, majice, 3D objekte in animacije.",
+      "category": "Urejanje videov in fotografij",
+      "details": "Urejal promocijske videe, male filme, YouTube videe.",
       "technologies": [
-        "Blender",
-        "Adobe Illustrator"
+        "Adobe Photoshop",
+        "Premiere",
+        "After Effects"
       ]
     },
     {
-      "category": "Urejanje videov in fotografij",
+      "category": "+ DODAJ hackatone?",
       "details": "Urejal promocijske videe, male filme, YouTube videe.",
       "technologies": [
         "Adobe Photoshop",

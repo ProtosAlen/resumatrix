@@ -62,11 +62,11 @@ export default function ViewResume() {
           </ul>
           <Divider />
 
-          <h2 className="text-2xl font-medium">Summary</h2>
+          <h2 className="text-2xl font-medium">Povzetek</h2>
           <p>{resumeData.summary}</p>
           <Divider className='wspace' />
 
-          <h2 className="text-2xl font-medium">Skills</h2>
+          <h2 className="text-2xl font-medium">Spretnosti</h2>
           <div className="skills-container flex flex-wrap gap-2">
             {resumeData.skills.map((skill) => (
               <Button key={skill} variant="flat" className="text-sm px-4 py-2 rounded-full bg-blue-500 text-white">
@@ -75,17 +75,17 @@ export default function ViewResume() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-medium">Education</h2>
+          <h2 className="text-2xl font-medium">Izobrazba</h2>
           {resumeData.education.map((edu) => (
             <Card key={edu.degree} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <h3 className="text-lg font-medium">{edu.degree}</h3>
-              <p className="text-sm text-gray-600">{edu.institution}</p>
-              <p className="text-sm text-gray-600">{edu.year}</p>
+              <p className="text-sm text-gray-600">{edu.institution} - {edu.year}</p>
+
             </Card>
           ))}
 
           <Divider />
-          <h2 className="text-2xl font-medium">Additional</h2>
+          <h2 className="text-2xl font-medium">Dodatno</h2>
           {resumeData.additional.map((additional) => (
             <Card key={additional.category} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <h3 className="text-lg font-medium">{additional.category}</h3>
@@ -97,7 +97,7 @@ export default function ViewResume() {
         </div>
 
         <div className="resume-right p-4 bg-gray-200 shadow-md rounded-lg mb-4">
-          <h2 className="text-2xl font-medium">Work Experience</h2>
+          <h2 className="text-2xl font-medium">Delovne izkušnje</h2>
           {resumeData.workExperience.map((exp) => (
             <Card key={exp.company} className="bg-white shadow-sm rounded-lg p-3 mb-2">
 
@@ -121,7 +121,7 @@ export default function ViewResume() {
             </Card>
           ))}
           <Divider />
-          <h2 className="text-2xl font-medium">Projects</h2>
+          <h2 className="text-2xl font-medium">Projekti</h2>
           {resumeData.projects.map((project) => (
             <Card key={project.title} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <h3 className="text-lg font-medium">{project.title}</h3>
@@ -155,7 +155,7 @@ export default function ViewResume() {
           )}
 
           <Divider />
-          <h2 className="text-2xl font-medium">Volunteer Experience</h2>
+          <h2 className="text-2xl font-medium">Prostovoljne izkušnje</h2>
           {resumeData.volunteer.map((vol) => (
             <Card key={vol.organization} className="bg-white shadow-sm rounded-lg p-3 mb-2">
               <div>
