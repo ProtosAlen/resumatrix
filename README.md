@@ -1,6 +1,6 @@
-# Vite & NextUI Template
+# Resumatrix
 
-This is a template for creating applications using Vite and NextUI (v2).
+Resumatrix is using a template for creating applications with Vite and NextUI (v2).
 
 [Try it on CodeSandbox](https://githubbox.com/nextui-org/vite-template)
 

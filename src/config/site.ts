@@ -16,10 +16,10 @@ export const siteConfig: TranslatedSiteConfig = {
   navItems: translations.navItems,
   navMenuItems: translations.navMenuItems,
   links: {
-    github: translations.links?.github || "https://github.com/nextui-org/nextui",
-    twitter: translations.links?.twitter || "https://twitter.com/getnextui",
-    docs: translations.links?.docs || "https://nextui-docs-v2.vercel.app",
-    discord: translations.links?.discord || "https://discord.gg/9b6yyZKmH4",
-    sponsor: translations.links?.sponsor || "https://patreon.com/jrgarciadev",
+    github: "https://github.com/ProtosAlen/resumatrix",
+    twitter: "",
+    docs: "",
+    discord: "",
+    sponsor: "",
   },
 };
