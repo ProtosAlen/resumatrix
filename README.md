@@ -30,13 +30,15 @@ cd vite-template # or your project folder
 
 ### 📦 Install Dependencies
 
-You can use `npm`, `yarn`, `pnpm`, or `bun`. Example using `npm`:
+We recommend using **Yarn** 🧶 for best compatibility:
 
 ```bash
-npm install
+yarn install
 ```
 
-Using `pnpm`? Add this to your `.npmrc` (optional):
+> You can still use `npm`, `pnpm`, or `bun` if you prefer.
+
+Using `pnpm`? Optionally add this to your `.npmrc`:
 
 ```bash
 public-hoist-pattern[]=*@nextui-org/*
@@ -51,7 +53,7 @@ pnpm install
 ### 🔧 Run the Development Server
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ---
