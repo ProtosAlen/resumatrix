@@ -1,20 +1,20 @@
 {
   "contact": {
     "name": "Alen Naumoski",
-    "email": "test@mail.t",
-    "phone": "+386 00 000 000",
+    "email": "naumoski.alen@gmail.com",
+    "phone": "+386 41 888 245",
     "linkedin": "linkedin.com/in/alen-naumoski"
   },
-  "summary": "Highly motivated and versatile professional with a strong background in programming, design, and project management. Proven experience in leading teams and delivering successful projects across various industries.",
+  "summary": "Highly motivated full-stack developer with 5+ years of experience in designing and developing web applications. Excellent knowledge of React, Angular, Laravel, and Node.js. Successfully led multiple projects from concept to production, enhancing user experience. Seeking new challenges in a dynamic environment where I can apply my knowledge and experience to develop innovative solutions.",
   "skills": [
     "Programming",
     "Research",
-    "Admin",
-    "Design",
+    "Administration",
     "Project Management",
-    "Organization",
+    "Organizational Skills",
+    "User Experience (UX) Design",
     "Creativity",
-    "Critical Thinking",
+    "Analytical Thinking",
     "Focus",
     "Adaptability",
     "Teamwork",
@@ -22,123 +22,186 @@
   ],
   "education": [
     {
-      "degree": "Bachelor's in Computer Science",
-      "institution": "Prizma: IN-SITU",
-      "year": "2021"
-    },
-    {
-      "degree": "",
+      "degree": "Certificate in Intercultural Communication",
       "institution": "X-Culture",
       "year": "2020"
     },
     {
-      "degree": "",
-      "institution": "Mladinski inkubator",
+      "degree": "Youth Incubator",
+      "institution": "MKC Maribor",
       "year": "2020"
     },
     {
-      "degree": "",
-      "institution": "Grow Slovenia with Google",
+      "degree": "InfoFix Project Development",
+      "institution": "Prizma: IN-SITU",
+      "year": "2021"
+    },
+    {
+      "degree": "Grow Slovenia with Google",
+      "institution": "Center for Business Excellence, Faculty of Economics",
+      "year": "2021"
+    },
+    {
+      "degree": "Unite Locally to Reconnect after Covid",
+      "institution": "Youth Council of Slovenia",
+      "year": "2021"
+    },
+    {
+      "degree": "Adria RawMaterials Incubator",
+      "institution": "University of Zagreb, Faculty of Mining, Geology and Petroleum Engineering (UNIZG-RGNF)",
       "year": "2021"
     }
   ],
   "workExperience": [
     {
+      "company": "100kvadratov",
+      "title": "UX/UI Designer, React & Laravel Developer",
+      "startDate": "8.2023",
+      "endDate": "2.2024",
+      "responsibilities": [
+        "Leading agile development processes",
+        "Designing user interfaces and experiences",
+        "Developing applications in React & Laravel"
+      ]
+    },
+    {
       "company": "SIING",
-      "title": "Scrum Master, UX/UI, Angular, Security",
+      "title": "Scrum Master, UX/UI Designer, Angular Developer, Security Expert",
       "startDate": "2.2022",
       "endDate": "9.2022",
       "responsibilities": [
-        "Managed agile development processes",
-        "Designed user interfaces and experiences",
-        "Developed Angular applications",
-        "Implemented security measures"
+        "Leading agile development processes",
+        "Designing user interfaces and experiences",
+        "Developing applications in Angular",
+        "Implementing security measures"
       ]
     },
     {
       "company": "ANAplus 2.",
-      "title": "Angular, Lead Designer & Programmer",
+      "title": "Head of Angular Application Development and Design",
       "startDate": "12.2022",
-      "endDate": "02.2023",
+      "endDate": "2.2023",
       "responsibilities": [
-        "Led Angular development projects",
-        "Designed visual assets and user interfaces",
-        "Implemented programming solutions"
+        "Leading the development of Angular applications",
+        "Designing visual elements and user interfaces",
+        "Implementing software solutions"
       ]
     },
     {
       "company": "ANAplus",
-      "title": "Angular, Lead Designer & Programmer",
-      "startDate": "01.2021",
-      "endDate": "09.2022",
+      "title": "Head of Angular Application Development and Design",
+      "startDate": "1.2021",
+      "endDate": "9.2022",
       "responsibilities": [
-        "Participated in design processes",
-        "Implemented programming features"
+        "Collaborating in design",
+        "Implementing software functionalities"
       ]
     }
   ],
   "projects": [
     {
-      "title": "InfoFix.eu (Developed & presented project)",
-      "description": "Community platform for information exchange and services",
+      "title": "Resumatrix",
+      "description": "Developed an application that allows users to easily and comprehensively create professional resumes",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Vite",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "title": "InfoFix.eu",
+      "description": "Platform for information and service exchange",
       "technologies": [
         "Angular",
         "TypeScript",
         "HTML",
-        "SCSS"
+        "SCSS",
+        "Node.js",
+        "PHP"
       ]
     },
     {
-      "title": "Popravimo Maribor: E-klopca",
-      "description": "A community-driven initiative to improve Maribor",
-      "technologies": []
-    },
-    {
-      "title": "Unite locally to reconnect after Covid",
-      "description": "Training for event organizers and leaders",
-      "technologies": []
-    },
-    {
-      "title": "Adria RawMaterials Incubator Lectures & Hackathon",
-      "description": "Developed innovative solutions for the Waste Exchange Market",
-      "technologies": []
-    },
-    {
-      "title": "Angular PWA for optimizing business documents",
-      "description": "Improved document creation efficiency with Progressive Web App",
+      "title": "Improve Maribor: E-bench",
+      "description": "Community initiative to improve Maribor",
       "technologies": [
-        "Angular"
+        "Blender",
+        "Adobe Photoshop"
       ]
     },
     {
-      "title": "Video Game Server",
-      "description": "Managed a Custom Minecraft server with over 100 players",
+      "title": "SIING: Inventory Application Development",
+      "description": "Mobile application for barcode scanning",
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "Android SDK"
+      ]
+    },
+    {
+      "title": "SIING: Angular PWA for Employee Time Tracking",
+      "description": "Progressive web application for viewing, editing, and analyzing working hours",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "REST",
+        "Material Design",
+        "Service Workers"
+      ]
+    },
+    {
+      "title": "SIING: Web Portal for Viewing Data Records",
+      "description": "Portal for interactive exploration and analysis of data",
+      "technologies": [
+        "Angular",
+        "Node.js",
+        "MySQL"
+      ]
+    },
+    {
+      "title": "ANAplus: Business Document Optimization",
+      "description": "Improving efficiency using a progressive web application",
+      "technologies": [
+        "Angular",
+        "PWA"
+      ]
+    },
+    {
+      "title": "Game Server",
+      "description": "Managing a Minecraft server with over 100 concurrent players",
       "technologies": [
         "Java",
-        "Minecraft",
         "Waterfall"
       ]
     },
     {
-      "title": "SIING - Flutter App for Android Barcode scanners",
-      "description": "Developed a mobile app for barcode scanning",
+      "title": "Application and Video Game Development",
+      "description": "Produced 2 major video games and 50+ smaller applications/games",
       "technologies": [
-        "Flutter",
-        "Dart"
+        "C#",
+        "Unity",
+        "Android Studio",
+        "WPF"
       ]
     },
     {
-      "title": "SIING - Angular PWA for viewing employee work time",
-      "description": "Created a web application to track employee hours",
+      "title": "Website Design and Development",
+      "description": "Designed 20+ websites using code and various tools",
       "technologies": [
-        "Angular"
+        "Angular",
+        "React",
+        "Wordpress",
+        "Weebly"
       ]
     },
     {
-      "title": "SIING - Web portal for viewing data logs",
-      "description": "Developed a web interface for data analysis",
+      "title": "Managing Large Servers",
+      "description": "Created servers for video games, progressive web applications, and databases",
       "technologies": [
-        "Angular"
+        "XAMPP",
+        "Linux Server",
+        "Java"
       ]
     }
   ],
@@ -146,17 +209,17 @@
   "awards": [],
   "volunteer": [
     {
-      "organization": "Banka idej @ MKC Maribor",
-      "role": "Project Evaluation Volunteer",
-      "startDate": "2021",
-      "endDate": "",
-      "description": "Contributed to project evaluation by assessing proposals, providing expert advice, and supporting project development."
+      "organization": "Idea Bank @ MKC Maribor",
+      "role": "Volunteer Project Evaluator",
+      "startDate": "1.2021",
+      "endDate": "12.2021",
+      "description": "Project evaluation, consulting, and development support."
     }
   ],
   "additional": [
     {
-      "category": "Programiranje",
-      "details": "Moje spretnosti zajemajo razvoj programske opreme z uporabo širokega spektra tehnologij.",
+      "category": "Programming",
+      "details": "My skills include software development using a wide range of technologies.",
       "technologies": [
         "C#",
         "JavaScript",
@@ -173,7 +236,7 @@
     },
     {
       "category": "DevOps",
-      "details": "Upravljanje kode, nadzor različic, avtomatizacija, proizvodni pipeline-i.",
+      "details": "Code management, version control, automation, production pipelines.",
       "technologies": [
         "Vercel",
         "Jenkins",
@@ -185,13 +248,21 @@
       ]
     },
     {
-      "category": "Baze podatkov",
-      "details": "Izkušnje s produkcijskimi MySQL, MariaDB in PostgreSQL bazami.",
+      "category": "Graphic Design and 3D Modeling",
+      "details": "Designed logos, video game textures, t-shirts, 3D objects, and animations.",
+      "technologies": [
+        "Blender",
+        "Adobe Illustrator"
+      ]
+    },
+    {
+      "category": "Databases",
+      "details": "Experience with production MySQL, MariaDB, and PostgreSQL databases.",
       "technologies": []
     },
     {
       "category": "Marketing",
-      "details": "Zgradil socialna omrežja, ustvaril oglaševalske kampanje.",
+      "details": "Built social media networks, created advertising campaigns.",
       "technologies": [
         "Meta/Facebook",
         "Google Analytics",
@@ -199,16 +270,8 @@
       ]
     },
     {
-      "category": "Grafično oblikovanje in 3D modeliranje",
-      "details": "Oblikoval logotipe, teksture za video igre, majice, 3D objekte in animacije.",
-      "technologies": [
-        "Blender",
-        "Adobe Illustrator"
-      ]
-    },
-    {
-      "category": "Urejanje videov in fotografij",
-      "details": "Urejal promocijske videe, male filme, YouTube videe.",
+      "category": "Video and Photo Editing",
+      "details": "Edited promotional videos, short films, YouTube videos.",
       "technologies": [
         "Adobe Photoshop",
         "Premiere",
