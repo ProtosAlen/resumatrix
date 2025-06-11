@@ -1,6 +1,6 @@
 # 💼 Resumatrix
 
-**Resumatrix** is a sleek resume builder web app built with **React**, powered by **Vite**, styled with **NextUI** and **Tailwind CSS**, and deployed with ease on **Vercel** 🚀. It helps you create and manage beautiful resumes with zero hassle.
+**Resumatrix** is a sleek resume builder web app built with **React**, powered by **Vite**, styled with **HeroUI** and **Tailwind CSS**, and deployed with ease on **Vercel** 🚀. It helps you create and manage beautiful resumes with zero hassle.
 
 👉 [Try it on Vercel](https://resumatrix-dev.vercel.app/)
 
@@ -10,7 +10,7 @@
 
 - ⚛️ [React](https://react.dev/): For building interactive UIs.
 - ⚡ [Vite](https://vitejs.dev/guide/): Lightning-fast dev environment.
-- 💎 [NextUI](https://nextui.org): Gorgeous React UI components.
+- 💎 [HeroUI](https://heroui.org): Gorgeous React UI components.
 - 🌈 [Tailwind CSS](https://tailwindcss.com): Utility-first CSS styling.
 - 🎭 [Tailwind Variants](https://tailwind-variants.org): Style components with smart variants.
 - ✨ [TypeScript](https://www.typescriptlang.org): Strongly typed JavaScript.
@@ -38,14 +38,13 @@ yarn install
 
 > You can still use `npm`, `pnpm`, or `bun` if you prefer.
 
+
 Using `pnpm`? Optionally add this to your `.npmrc`:
 
 ```bash
 public-hoist-pattern[]=*@nextui-org/*
 ```
-
 Then:
-
 ```bash
 pnpm install
 ```

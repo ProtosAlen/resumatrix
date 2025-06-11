@@ -1,7 +1,7 @@
 
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
+import { Link } from "@heroui/react";
+import { Snippet } from "@heroui/react";
+import { Code } from "@heroui/react";
 import { button as buttonStyles } from "@nextui-org/theme";
 
 //import { siteConfig } from "@/config/site";
