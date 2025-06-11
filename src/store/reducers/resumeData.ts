@@ -149,7 +149,7 @@ const resumeSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(loadResume.fulfilled, (state, action: PayloadAction<ResumeData>) => {
+    builder.addCase(loadResume.fulfilled, (_, action: PayloadAction<ResumeData>) => {
       return action.payload;
     });
   },
