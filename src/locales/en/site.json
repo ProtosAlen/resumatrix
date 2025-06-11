@@ -1,6 +1,6 @@
 {
     "name": "Resumatrix",
-    "description": "Make beautifueeee websites regardless of your design experience.",
+    "description": "Make beautiful resumes regardless of your design experience.",
     "navItems": [
         {
             "label": "Home",
@@ -9,14 +9,6 @@
         {
             "label": "Builder",
             "href": "/docs"
-        },
-        {
-            "label": "Pricing",
-            "href": "/pricing"
-        },
-        {
-            "label": "About",
-            "href": "/about"
         }
     ],
     "navMenuItems": [

@@ -96,3 +96,12 @@ ul {
     gap: 1rem;
     /* Optional gap between columns */
 }
+
+.resumatrix-title-styles {
+    margin-bottom: 1rem;
+    /* Or adjust top/bottom/all margins as needed */
+    /*border-bottom: 3px solid rgba(104, 104, 180, 0.198);
+     Adjust color and thickness as desired */
+    padding: 0.5rem;
+    /* Add some padding so outline doesn't hug the text */
+}
