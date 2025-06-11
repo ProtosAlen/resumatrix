@@ -32,7 +32,7 @@ import {
   removeVolunteerExperience,
   //loadResume
 } from '@/store/reducers/resumeData';
-import { Card, Divider } from '@nextui-org/react';
+import { Card, Divider } from '@heroui/react';
 
 export default function EditResume() {
   const dispatch = useDispatch();

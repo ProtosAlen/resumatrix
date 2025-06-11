@@ -1,8 +1,8 @@
 import { ResumeData } from '@/interface/ResumeData';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import resumeData from '@/data/resume_sl.json';
-//import resumeData2 from '@/data/resume_en.json';
+//import resumeData2 from '@/data/resume_sl.json';
+import resumeData from '@/data/resume_en.json';
 
 const initialState: ResumeData = resumeData;
 

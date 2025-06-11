@@ -1,16 +1,17 @@
-import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
-import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
+import { Button } from "@heroui/react";
+import { Kbd } from "@heroui/react";
+import { Link } from "@heroui/react";
+import { Input } from "@heroui/react";
 import {
-  Navbar as NextUINavbar,
+  Navbar as HeroUINavbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
-} from "@nextui-org/navbar";
+} from "@heroui/react";
+
 import { link as linkStyles } from "@nextui-org/theme";
 import clsx from "clsx";
 
@@ -48,7 +49,7 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <Link
@@ -139,6 +140,6 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
-    </NextUINavbar>
+    </HeroUINavbar>
   );
 };
