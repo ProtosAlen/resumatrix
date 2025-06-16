@@ -1,0 +1,92 @@
+/* src/components/resume/ViewResume.module.css */
+
+.resumeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Left column slightly narrower than right */
+    gap: 2rem;
+    /* Increased gap for better separation */
+    max-width: 1100px;
+    /* Set a max-width for the whole CV */
+    margin: 2rem auto;
+    /* Center the CV on the page with vertical margins */
+    padding: 1rem;
+    /* Overall padding for the container */
+}
+
+.resumeColumn {
+    background-color: #f8f8f8;
+    /* Lighter background than gray-200 for a cleaner look */
+    padding: 1.5rem;
+    /* More generous internal padding for columns */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Softer shadow */
+    border-radius: 0.75rem;
+    /* Slightly more rounded corners */
+}
+
+.sectionTitle {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    /* Padding at the bottom for the divider */
+    border-bottom: 1px solid #e0e0e0;
+    /* Softer divider */
+}
+
+.contactInfo {
+    margin-bottom: 1.5rem;
+    /* A bit more space after contact info */
+}
+
+.skillsContainer {
+    margin-top: 1rem;
+    /* Space above skills */
+    margin-bottom: 1.5rem;
+    /* Space below skills */
+}
+
+/* NextUI Card overrides for consistent spacing (use a more specific selector) */
+/* This is a global override if .card is too generic, consider if you truly need it here */
+.cardSpacing {
+    margin-bottom: 1rem;
+    /* Consistent bottom margin for all cards */
+}
+
+/* Specific adjustments for bullet points in work experience */
+.jobEntry ul {
+    list-style-type: disc;
+    /* Ensure disc bullets */
+    padding-left: 1.25rem;
+    /* Consistent indent for bullets */
+    margin-top: 0.5rem;
+    /* Space above bullet points */
+}
+
+.jobEntry ul li {
+    margin-bottom: 0.25rem;
+    /* Small space between list items */
+}
+
+/* Ensure consistent spacing after h2 titles */
+.sectionTitle+p,
+.sectionTitle+.skillsContainer,
+.sectionTitle+.cardSpacing {
+    /* Adjusted to use cardSpacing if that's the class you'll use */
+    margin-top: 1rem;
+    /* Standard space after a section title */
+}
+
+/* Margin for subsequent cards (when used directly after another card) */
+.cardSpacing+.cardSpacing {
+    margin-top: 1rem;
+    /* Space between cards in a list */
+}
+
+/* Margin for next Card in the list (e.g. after divider) */
+.dividerSpacing+.sectionTitle {
+    margin-top: 1.5rem;
+    /* More space after a divider before a new section title */
+}
+
+
+/* Add any other specific styles here that aren't global or Tailwind-handled */

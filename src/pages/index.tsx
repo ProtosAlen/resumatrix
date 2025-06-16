@@ -1,8 +1,8 @@
 
 import { Link } from "@heroui/react";
 import { Snippet } from "@heroui/react";
-import { Code } from "@heroui/react";
-import { button as buttonStyles } from "@nextui-org/theme";
+import { Code } from "@heroui/code";
+import { button as buttonStyles } from "@heroui/theme";
 
 //import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -63,7 +63,7 @@ export default function IndexPage() {
             <span>
               <FormattedMessage id="get_started" defaultMessage={messages.get_started} />&nbsp;
               <Link href="/docs">
-                <Code color="primary">pages/Builder</Code>
+                <Code color="primary">the Resume Builder</Code>
               </Link>
 
 

@@ -12,7 +12,7 @@ import {
   NavbarMenuItem,
 } from "@heroui/react";
 
-import { link as linkStyles } from "@nextui-org/theme";
+import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";

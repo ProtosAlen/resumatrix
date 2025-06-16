@@ -1,11 +1,6 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "types": [
-      "node",
-      "@react-pdf/renderer", // Add type definitions for @react-pdf/renderer
-      "react-dom" // Add type definitions for react-dom/server
-    ],
     "useDefineForClassFields": true,
     "lib": [
       "ES2020",
