@@ -1,10 +1,6 @@
 // @/components/EditResume.tsx
 import React from 'react';
-// @/components/EditResume.tsx
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
-
 import { RootState } from '@/store/store';
 
 import {
@@ -43,10 +39,6 @@ import {
   ResumeData
 } from '@/interface/ResumeData';
 
-
-import {
-  ResumeData
-} from '@/interface/ResumeData';
 
 import { Card, Divider } from '@heroui/react';
 
