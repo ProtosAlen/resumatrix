@@ -451,7 +451,7 @@ export default function EditResume() {
             rows={2}
           />
           <InputField
-            label="Technologies (if applicable)"
+            label="Technologies"
             type="text"
             name={`additionalTechnologies-${index}`}
             value={additional.technologies.join(', ')}

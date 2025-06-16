@@ -13,21 +13,16 @@ import styles from './ViewResume.module.css'; // Correct import
 export default function ViewResume() {
   const resumeData = useSelector((state: RootState) => state.resumeData);
 
-  const handleDownloadPDF = async () => {
-    try {
-      const buffer = await GenerateResumePDF(resumeData);
-      const blob = new Blob([buffer], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Resume.pdf';
-      link.click();
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-      // Handle errors appropriately (e.g., display error message to user)
-    }
+  const downloadPdf = async () => {
+    const pdfBlob = await GenerateResumePDF(resumeData);
+    const url = URL.createObjectURL(pdfBlob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "resume.pdf";
+    a.click();
+    URL.revokeObjectURL(url);
   };
+
 
   const showCertifications = false;
   const showAwards = false;
@@ -36,7 +31,7 @@ export default function ViewResume() {
     <section className="py-8 md:py-10">
       <div className="flex flex-col items-center justify-center gap-4 mb-8">
         <h3 className="text-3xl font-bold text-gray-800">Pregled življenjepisa</h3>
-        <Button onClick={handleDownloadPDF} color="primary" className="mt-4">
+        <Button onClick={downloadPdf} color="primary" className="mt-4">
           Prenesi PDF
         </Button>
       </div>
