@@ -1,6 +1,10 @@
 // @/components/EditResume.tsx
 import React from 'react';
+// @/components/EditResume.tsx
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
+
 import { RootState } from '@/store/store';
 
 import {
@@ -34,6 +38,11 @@ import {
   updateVolunteerExperience,
   removeVolunteerExperience,
 } from '@/store/reducers/resumeData';
+
+import {
+  ResumeData
+} from '@/interface/ResumeData';
+
 
 import {
   ResumeData

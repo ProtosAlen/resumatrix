@@ -1,10 +1,29 @@
-import { ResumeData } from '@/interface/ResumeData';
+// @/store/reducers/resumeData.ts
+import { ResumeData } from '@/interface/ResumeData'; // Correctly importing your defined interface
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-//import resumeData2 from '@/data/resume_sl.json';
-import resumeData from '@/data/resume_en.json';
+// Assuming your JSON initial data also matches the ResumeData structure
+import resumeDataEN from '@/data/resume_en.json';
 
-const initialState: ResumeData = resumeData;
+const initialState: ResumeData = resumeDataEN as ResumeData; // Assert for strong initial typing
+
+// Async Thunk for loading resume data based on language (if you're using it)
+export const loadResume = createAsyncThunk(
+  'resumeData/loadResume',
+  async (selectedLanguage: 'en' | 'sl') => { // Explicitly define possible languages
+    try {
+      const response = await fetch(`/data/resume_${selectedLanguage}.json`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: ResumeData = await response.json(); // Type the fetched data
+      return data;
+    } catch (error) {
+      console.error("Failed to load resume data:", error);
+      throw error;
+    }
+  }
+);
 
 const resumeSlice = createSlice({
   name: 'resumeData',
@@ -34,43 +53,48 @@ const resumeSlice = createSlice({
     updateSkill(state, action: PayloadAction<{ index: number; value: string }>) {
       state.skills[action.payload.index] = action.payload.value;
     },
-    addEducation(state, action: PayloadAction<{ degree: string; institution: string; year: string }>) {
+    // Use the nested types directly for 'add' actions
+    addEducation(state, action: PayloadAction<ResumeData['education'][number]>) {
       state.education.push(action.payload);
     },
-    updateEducation(state, action: PayloadAction<{ index: number; field: 'degree' | 'institution' | 'year'; value: string }>) {
+    updateEducation(state, action: PayloadAction<{ index: number; field: keyof ResumeData['education'][number]; value: string }>) {
       const { index, field, value } = action.payload;
-      state.education[index][field] = value;
+      if (state.education[index]) {
+        state.education[index][field] = value;
+      }
     },
     removeEducation(state, action: PayloadAction<number>) {
       state.education.splice(action.payload, 1);
     },
-    addWorkExperience(state, action: PayloadAction<{ company: string; title: string; startDate: string; endDate: string; responsibilities: string[] }>) {
+    addWorkExperience(state, action: PayloadAction<ResumeData['workExperience'][number]>) {
       state.workExperience.push(action.payload);
     },
-    updateWorkExperience(state, action: PayloadAction<{ index: number; field: 'company' | 'title' | 'startDate' | 'endDate' | 'responsibilities'; value: string | string[] }>) {
+    updateWorkExperience(state, action: PayloadAction<{ index: number; field: keyof ResumeData['workExperience'][number]; value: string | string[] }>) {
       const { index, field, value } = action.payload;
-      if (field === 'responsibilities') {
-        // Ensure value is an array and split if necessary
-        const responsibilitiesArray = Array.isArray(value) ? value : value.split(',').map(item => item.trim());
-        state.workExperience[index].responsibilities = responsibilitiesArray;
-        console.log('log workEx ', responsibilitiesArray)
-      } else {
-        state.workExperience[index][field] = value as string;
+      if (state.workExperience[index]) {
+        if (field === 'responsibilities') {
+          state.workExperience[index].responsibilities = value as string[];
+        } else {
+          // Type assertion needed here because `value` could be `string[]`
+          (state.workExperience[index] as any)[field] = value;
+        }
       }
     },
-
     removeWorkExperience(state, action: PayloadAction<number>) {
       state.workExperience.splice(action.payload, 1);
     },
-    addProject(state, action: PayloadAction<{ title: string; description: string; technologies: string[] }>) {
+    addProject(state, action: PayloadAction<ResumeData['projects'][number]>) {
       state.projects.push(action.payload);
     },
-    updateProject(state, action: PayloadAction<{ index: number; field: 'title' | 'description' | 'technologies'; value: string | string[] }>) {
+    updateProject(state, action: PayloadAction<{ index: number; field: keyof ResumeData['projects'][number]; value: string | string[] }>) {
       const { index, field, value } = action.payload;
-      if (field === 'technologies') {
-        state.projects[index].technologies = value as string[];
-      } else {
-        state.projects[index][field] = value as string;
+      if (state.projects[index]) {
+        if (field === 'technologies') {
+          state.projects[index].technologies = value as string[];
+        } else {
+          // Type assertion needed here
+          (state.projects[index] as any)[field] = value;
+        }
       }
     },
     removeProject(state, action: PayloadAction<number>) {
@@ -94,44 +118,42 @@ const resumeSlice = createSlice({
     removeAward(state, action: PayloadAction<number>) {
       state.awards.splice(action.payload, 1);
     },
-    addAdditional(state, action: PayloadAction<{ category: string; details: string; technologies: string[] }>) {
+    addAdditional(state, action: PayloadAction<ResumeData['additional'][number]>) {
       state.additional.push(action.payload);
     },
-    updateAdditional(state, action: PayloadAction<{ index: number; field: 'category' | 'details' | 'technologies'; value: string | string[] }>) {
+    updateAdditional(state, action: PayloadAction<{ index: number; field: keyof ResumeData['additional'][number]; value: string | string[] }>) {
       const { index, field, value } = action.payload;
-      if (field === 'technologies') {
-        state.additional[index].technologies = value as string[];
-      } else {
-        state.additional[index][field] = value as string;
+      if (state.additional[index]) {
+        if (field === 'technologies') {
+          state.additional[index].technologies = value as string[];
+        } else {
+          // Type assertion needed here
+          (state.additional[index] as any)[field] = value;
+        }
       }
     },
     removeAdditional(state, action: PayloadAction<number>) {
       state.additional.splice(action.payload, 1);
     },
-    addVolunteerExperience(state, action: PayloadAction<{ organization: string; role: string; startDate: string; endDate: string; description: string }>) {
+    addVolunteerExperience(state, action: PayloadAction<ResumeData['volunteer'][number]>) {
       state.volunteer.push(action.payload);
     },
-    updateVolunteerExperience(state, action: PayloadAction<{ index: number; field: 'organization' | 'role' | 'startDate' | 'endDate' | 'description'; value: string }>) {
+    updateVolunteerExperience(state, action: PayloadAction<{ index: number; field: keyof ResumeData['volunteer'][number]; value: string }>) {
       const { index, field, value } = action.payload;
-      state.volunteer[index][field] = value;
+      if (state.volunteer[index]) {
+        state.volunteer[index][field] = value;
+      }
     },
     removeVolunteerExperience(state, action: PayloadAction<number>) {
       state.volunteer.splice(action.payload, 1);
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(loadResume.fulfilled, (_, action: PayloadAction<ResumeData>) => {
+      return action.payload;
+    });
+  },
 });
-
-// Thunk to load resume data from JSON file
-export const loadResume = createAsyncThunk(
-  'resumeData/loadResume',
-  async (selectedLanguage: 'en' | 'default') => {
-    const response = await fetch(`/data/resume_${selectedLanguage}.json`);
-    const data = await response.json();
-    return data;
-  }
-);
-
-
 
 export const {
   updateContactName,
