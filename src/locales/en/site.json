@@ -7,8 +7,16 @@
             "href": "/"
         },
         {
-            "label": "Builder",
-            "href": "/docs"
+            "label": "Editor",
+            "href": "/editor"
+        },
+        {
+            "label": "Pricing",
+            "href": "/pricing"
+        },
+        {
+            "label": "About",
+            "href": "/about"
         }
     ],
     "navMenuItems": [

@@ -105,3 +105,113 @@ ul {
     padding: 0.5rem;
     /* Add some padding so outline doesn't hug the text */
 }
+
+/* styles/globals.css */
+
+/* --- Electric title gradients with neon text glow --- */
+.text-gradient-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 24px rgba(6, 182, 212, 0.4));
+}
+
+.text-gradient-violet {
+    background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 24px rgba(217, 70, 239, 0.4));
+}
+
+/* --- Background orbs (depth + optional pulse) --- */
+@keyframes orb-pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.bg-glow-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.45) 0%, rgba(6, 182, 212, 0.2) 40%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+    animation: orb-pulse 8s ease-in-out infinite;
+}
+
+.bg-glow-orb-right {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(217, 70, 239, 0.2) 40%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+    animation: orb-pulse 10s ease-in-out infinite 1s;
+}
+
+/* Cursor-following glow: position from CSS vars, smooth transition */
+.cursor-glow {
+    position: fixed;
+    left: var(--mouse-x, 50%);
+    top: var(--mouse-y, 50%);
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(139, 92, 246, 0.2) 35%, rgba(0, 0, 0, 0) 65%);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    transition: left 0.15s ease-out, top 0.15s ease-out;
+}
+
+.glass-card {
+    /* Semi-transparent dark background */
+    background: rgba(17, 17, 17, 0.6) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* Button glows: default + hover for reactivity */
+.button-glow {
+    box-shadow: 0 0 20px 2px rgba(0, 112, 243, 0.4);
+    transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.button-glow:hover {
+    box-shadow: 0 0 32px 8px rgba(0, 112, 243, 0.55), 0 0 48px 16px rgba(6, 182, 212, 0.25);
+    transform: translateY(-1px);
+}
+
+.button-glow-border {
+    transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.button-glow-border:hover {
+    box-shadow: 0 0 24px 4px rgba(255, 255, 255, 0.15), 0 0 32px 4px rgba(139, 92, 246, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Glass cards: hover glow so they feel reactive */
+.glass-card {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    box-shadow: 0 0 40px -8px rgba(59, 130, 246, 0.25), 0 0 24px -8px rgba(139, 92, 246, 0.15);
+    border-color: rgba(255, 255, 255, 0.18) !important;
+}

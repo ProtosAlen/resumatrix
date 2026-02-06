@@ -88,5 +88,17 @@
     /* More space after a divider before a new section title */
 }
 
+/* Dark mode: glass-style resume preview */
+:global(.dark) .resumeContainer {
+    color: rgba(255, 255, 255, 0.9);
+}
 
-/* Add any other specific styles here that aren't global or Tailwind-handled */
+:global(.dark) .resumeColumn {
+    background-color: rgba(17, 17, 17, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+}
+
+:global(.dark) .sectionTitle {
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}

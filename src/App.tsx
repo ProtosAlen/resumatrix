@@ -11,6 +11,7 @@ function App() {
   return (
     <Routes>
       <Route element={<IndexPage />} path="/" />
+      <Route element={<ResumeBuilderPage />} path="/editor" />
       <Route element={<ResumeBuilderPage />} path="/docs" />
       <Route element={<PricingPage />} path="/pricing" />
       {/* <Route element={<BlogPage />} path="/blog" /> */}

@@ -59,7 +59,7 @@ interface InputFieldProps {
 
 const InputField: React.FC<InputFieldProps> = ({ label, type, name, value, onChange, placeholder, rows }) => (
   <div className="mb-2">
-    {label && <label htmlFor={name} className="block text-sm font-medium text-gray-700">{label}</label>}
+    {label && <label htmlFor={name} className="block text-sm font-medium text-gray-700 dark:text-gray-300">{label}</label>}
     {type === 'textarea' ? (
       <textarea
         id={name}
@@ -320,11 +320,11 @@ export default function EditResume() {
           <Card className={`${styles.innerCardPreview}`}> {/* Using module class */}
             <h3 className="text-lg font-medium">
               {exp.company}
-              <span className="text-sm text-gray-600 ml-2">
+              <span className="text-sm text-gray-600 dark:text-gray-400 ml-2">
                 {exp.startDate} - {exp.endDate}
               </span>
             </h3>
-            <h4 className="text-sm font-semibold text-gray-500">{exp.title}</h4>
+            <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400">{exp.title}</h4>
             <ul className={`${styles.responsibilityList}`}> {/* Using module class */}
               {exp.responsibilities && exp.responsibilities.length > 0 ? (
                 exp.responsibilities.map((responsibility, i) => (

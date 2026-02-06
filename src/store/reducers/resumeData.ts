@@ -147,6 +147,9 @@ const resumeSlice = createSlice({
     removeVolunteerExperience(state, action: PayloadAction<number>) {
       state.volunteer.splice(action.payload, 1);
     },
+    setResumeData(_state, action: PayloadAction<ResumeData>) {
+      return action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(loadResume.fulfilled, (_, action: PayloadAction<ResumeData>) => {
@@ -185,6 +188,7 @@ export const {
   addVolunteerExperience,
   updateVolunteerExperience,
   removeVolunteerExperience,
+  setResumeData,
 } = resumeSlice.actions;
 
 export default resumeSlice.reducer;

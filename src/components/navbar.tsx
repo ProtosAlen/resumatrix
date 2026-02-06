@@ -59,7 +59,7 @@ export const Navbar = () => {
             <p className="font-bold text-inherit">Resumatrix</p>
           </Link>
         </NavbarBrand>
-        <div className="hidden lg:flex gap-4 justify-start ml-2">
+        <div className="hidden md:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <Link
@@ -113,19 +113,9 @@ export const Navbar = () => {
       <NavbarMenu>
         {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
+          {siteConfig.navItems.map((item) => (
+            <NavbarMenuItem key={item.href}>
+              <Link color="foreground" href={item.href} size="lg" onClick={() => (document.activeElement as HTMLElement)?.blur?.()}>
                 {item.label}
               </Link>
             </NavbarMenuItem>
